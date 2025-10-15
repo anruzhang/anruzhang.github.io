@@ -100,9 +100,9 @@ body {font-family: Arial;}
 		
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'EHR')">Health</button>
+  <button class="tablinks" onclick="openCity(event, 'Generative')">Generative Models</button>
   <button class="tablinks" onclick="openCity(event, 'Tensor')">Tensor</button>
   <button class="tablinks" onclick="openCity(event, 'Microbiome')">Microbiome</button>
-  <button class="tablinks" onclick="openCity(event, 'Generative')">Generative Models</button>
   <button class="tablinks" onclick="openCity(event, 'Markov')">Markov</button>
   <button class="tablinks" onclick="openCity(event, 'Network')">Network</button>
   <button class="tablinks" onclick="openCity(event, 'High-D')">High-D Stats.</button>
@@ -124,14 +124,38 @@ body {font-family: Arial;}
 
   <p>Representative papers:</p>
 		<ul>
-		  <li>Muhang Tian, Bernie Chen, Allan Guo, Shiyi Jiang, Anru R. Zhang (2024+), <a href = "https://arxiv.org/abs/2310.15290">Fast and reliable generation of EHR time series via diffusion models</a>, <I>Journal of the American Medical Informatics Association</I>, to appear.</li>
+		  <li>Jianbin Tan, Yan Zhang, Chuan Hong, T Tony Cai, Tianxi Cai, and Anru R Zhang (2025+). <a href="https://arxiv.org/abs/2506.09208">Integrated Analysis for Electronic Health Records with Structured and Sporadic Missingness</a>, <I>Journal of Biomedical Informatics</I>.</li>
+		  <li>Xin Gai, Shiyi Jiang, and Anru R Zhang (2025+). <a href="https://arxiv.org/abs/2501.07336">Subtype-Aware Registration of Longitudinal Electronic Health Records</a>.</li>
+		  <li>Muhang Tian, Bernie Chen, Allan Guo, Shiyi Jiang, Anru R. Zhang (2024+). <a href = "https://arxiv.org/abs/2310.15290">Fast and reliable generation of EHR time series via diffusion models</a>, <I>Journal of the American Medical Informatics Association</I>.</li>
 		  <li>Zihan Zhu, Xin Gai, Anru R. Zhang (2024+), <a href = "http://arxiv.org/abs/2405.03042">Functional post-clustering selective inference with applications to EHR</a>.</li>
-		  <li>Shiyi Jiang, Xin Gai, Miriam Treggiari, William Stead, Yuankang Zhao, David Page, Anru R. Zhang (2024), <a href = "http://arxiv.org/abs/2311.08629">Soft phenotyping for sepsis via EHR time-aware soft clustering</a>, <I>Journal of Biomedical Informatics</I>, 152, 104615.</li>
+		  <li>Shiyi Jiang, Xin Gai, Miriam Treggiari, William Stead, Yuankang Zhao, David Page, Anru R. Zhang (2024). <a href = "http://arxiv.org/abs/2311.08629">Soft phenotyping for sepsis via EHR time-aware soft clustering</a>, <I>Journal of Biomedical Informatics</I>, 152, 104615.</li>
 		  <li>Shiyi Jiang, Rungang Han, Krishnendu Chakrabarty, David Page, William Stead, and Anru R. Zhang (2023). <a href = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283114/">Timeline registration for electronic health records</a>, <I>AMIA Summits on Translational Science Proceedings</I>, 291-299.<br />
 		  <span style="display: inline-block; margin-left: 0px;"><font color="gray">(This paper won the <I>Data Science Distinguished Paper Award</I> from 2023 <a href="https://amia.org/education-events/amia-2023-informatics-summit">AMIA Informatics Summit</a>. Only one paper receives this award.)</font></span>
 		</ul>
 
+</div>
 
+<div id="Generative" class="tabcontent">
+
+  <br>
+  <h4>Generative Models</h4>
+
+  <p>Generative models are a class of machine learning models that aim to understand and model the underlying distribution of data, allowing researchers to generate synthetic data that resemble the original dataset. These models have broad applications in biomedical data analysis, where generating realistic data is crucial for tasks like simulation, privacy preservation, and data augmentation.</p>
+  
+  <img src="figures/EHR-real-synthetic.png" height="250" align="middle"> <br>
+
+  <p>Representative papers:</p>
+  <ul>
+    <li></li>
+    <li>Jianbin Tan and Anru R. Zhang (2025+). <a href="https://arxiv.org/abs/2508.13831">Smooth Flow Matching</a>.</li>
+    <li>Pengfei Lyu, Zhengchi Ma, Linjun Zhang, and Anru R Zhang (2025+). <a href="">Bias-Corrected Data Synthesis for Imbalanced Learning</a>.</li>
+    <li>Yufa Zhou, Yixiao Wang, Surbhi Goel, and Anru R. Zhang (2025+). <a href="https://arxiv.org/abs/2510.09776">Why Do Transformers Fail to Forecast Time Series In-Context?</a></li>
+    <li>Yufa Zhou, Yixiao Wang, Xunjian Yin, Shuyan Zhou, and Anru R. Zhang (2025+). <a href="https://arxiv.org/abs/2510.09782">The Geometry of Reasoning: Flowing Logics in Representation Space
+</a></li>
+    <li>Muhang Tian, Bernie Chen, Allan Guo, Shiyi Jiang, Anru R. Zhang (2024). <a href = "https://arxiv.org/abs/2310.15290">Fast and reliable generation of EHR time series via diffusion models</a>, <I>Journal of the American Medical Informatics Association</I>.</li>
+		<li>Sitan Chen, Sinho Chewi, Jerry Li, Yuanzhi Li, Adil Salim, and Anru R. Zhang (2023). <a href = "https://arxiv.org/abs/2209.11215">Sampling is as easy as learning the score: Theory for diffusion models with minimal data assumptions</a>, <I>International Conference on Learning Representations (ICLR)</I>, accept: notable-top-5%.</li>
+		<li>Sitan Chen, Jerry Li, Yuanzhi Li, and Anru R. Zhang (2023). <a href = "https://arxiv.org/abs/2204.04209">Learning polynomial transformations</a>, <I>2023 Annual ACM Symposium on Theory of Computing (STOC)</I>.</li>
+  </ul>
 </div>
 
 <div id="Tensor" class="tabcontent">
@@ -156,22 +180,7 @@ body {font-family: Arial;}
 
 </div>
 
-<div id="Generative" class="tabcontent">
 
-  <br>
-  <h4>Generative Models</h4>
-
-  <p>Generative models are a class of machine learning models that aim to understand and model the underlying distribution of data, allowing researchers to generate synthetic data that resemble the original dataset. These models have broad applications in biomedical data analysis, where generating realistic data is crucial for tasks like simulation, privacy preservation, and data augmentation.</p>
-  
-  <img src="figures/EHR-real-synthetic.png" height="250" align="middle"> <br>
-
-  <p>Representative papers:</p>
-  <ul>
-    <li>Muhang Tian, Bernie Chen, Allan Guo, Shiyi Jiang, Anru R. Zhang (2024+), <a href = "https://arxiv.org/abs/2310.15290">Fast and reliable generation of EHR time series via diffusion models</a>, <I>Journal of the American Medical Informatics Association</I>, to appear.</li>
-		<li>Sitan Chen, Sinho Chewi, Jerry Li, Yuanzhi Li, Adil Salim, and Anru R. Zhang (2023). <a href = "https://arxiv.org/abs/2209.11215">Sampling is as easy as learning the score: Theory for diffusion models with minimal data assumptions</a>, <I>International Conference on Learning Representations (ICLR)</I>, accept: notable-top-5%.</li>
-		<li>Sitan Chen, Jerry Li, Yuanzhi Li, and Anru R. Zhang (2023). <a href = "https://arxiv.org/abs/2204.04209">Learning polynomial transformations</a>, <I>2023 Annual ACM Symposium on Theory of Computing (STOC)</I>.</li>
-  </ul>
-</div>
 
 <div id="Microbiome" class="tabcontent">
 
