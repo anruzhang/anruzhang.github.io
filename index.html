@@ -142,6 +142,14 @@
       line-height: 1.65;
     }
 
+    .research-area-list .map-card {
+      min-height: 0;
+    }
+
+    .research-area-list .map-card h3 {
+      margin: 0;
+    }
+
     .callout {
       padding: 1.5rem;
     }
@@ -351,30 +359,22 @@
 
       <section class="section">
         <div class="section-header">
-          <h2>Research directions</h2>
-          <p>A compact view of the main themes developed across the Research and Publications pages.</p>
+          <h2>Research areas</h2>
+          <p><a href="research.html">View research details →</a></p>
         </div>
 
-        <div class="map-grid">
-          <a class="map-card foundations" href="research.html#foundations">
-            <h3>Statistical foundations</h3>
-            <p>High-dimensional inference, concentration, phase transitions, and computational limits.</p>
-          </a>
-
-          <a class="map-card ml" href="research.html#generative">
-            <h3>Generative AI &amp; synthetic data</h3>
-            <p>Diffusion and flow models, representation learning, transformers, and data augmentation.</p>
-          </a>
-
-          <a class="map-card methods" href="research.html#tensor">
-            <h3>Tensors, low rank &amp; optimization</h3>
-            <p>Tensor decomposition, functional data, matrix methods, and Riemannian optimization.</p>
-          </a>
-
-          <a class="map-card applications" href="research.html#health">
-            <h3>Health &amp; scientific data</h3>
-            <p>EHR, genomics, microbiome, imaging, networks, and interdisciplinary collaborations.</p>
-          </a>
+        <div class="map-grid research-area-list">
+          <div class="map-card ml"><h3>Synthetic Data</h3></div>
+          <div class="map-card applications"><h3>Health Informatics</h3></div>
+          <div class="map-card ml"><h3>Generative Models</h3></div>
+          <div class="map-card methods"><h3>Tensor Data Analysis</h3></div>
+          <div class="map-card applications"><h3>Microbiome Data Analysis</h3></div>
+          <div class="map-card foundations"><h3>High-Dimensional Statistics</h3></div>
+          <div class="map-card methods"><h3>Nonconvex &amp; Riemannian Optimization</h3></div>
+          <div class="map-card methods"><h3>Markov (Decision) Processes</h3></div>
+          <div class="map-card applications"><h3>Network Analysis</h3></div>
+          <div class="map-card foundations"><h3>Computational Complexity of Statistical Inference</h3></div>
+          <div class="map-card applications"><h3>Collaborative Research</h3></div>
         </div>
       </section>
 
@@ -415,7 +415,7 @@
     <a href="https://pixushi.github.io/Pixu_books.html">
       <img
         class="book-image"
-        src="figures/Pixu-book.jpeg"
+        src="figures/pixu-book.jpeg"
         alt="Learning Statistics Through Pictures book series"
       >
     </a>

@@ -50,6 +50,7 @@
     a:hover { color: var(--accent-dark); }
 
     .site-header {
+      padding: 1.5rem 0;
       border-bottom: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.97);
     }
@@ -69,7 +70,7 @@
     }
 
     .brand-name {
-      margin: 0;
+      margin: 0 0 0.4rem;
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 500;
@@ -78,10 +79,12 @@
 
     .brand-affiliation {
       margin: 0;
-      max-width: 690px;
+      max-width: none;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.91rem;
+      line-height: 1.5;
       text-align: right;
+      white-space: nowrap;
     }
 
     nav {
@@ -94,12 +97,12 @@
       margin: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 4px 24px;
+      gap: 0.5rem 1.5rem;
     }
 
     .nav-list a {
       display: inline-block;
-      padding: 13px 0 11px;
+      padding: 0.5rem 0;
       color: var(--muted);
       text-decoration: none;
       border-bottom: 2px solid transparent;
@@ -117,7 +120,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.55fr 0.85fr;
+      grid-template-columns: 1fr;
       gap: 44px;
       align-items: start;
       margin-bottom: 46px;
@@ -518,7 +521,12 @@
       .map-grid { grid-template-columns: repeat(2, 1fr); }
       .featured-grid { grid-template-columns: repeat(2, 1fr); }
       .brand { align-items: flex-start; flex-direction: column; gap: 5px; }
-      .brand-affiliation { text-align: left; }
+      .brand-affiliation { text-align: left; white-space: normal; }
+    }
+
+    @media (max-width: 760px) {
+      .site-header { padding: 1.25rem 0; }
+      .nav-list { gap: 0.25rem 1rem; }
     }
 
     @media (max-width: 640px) {
@@ -584,144 +592,11 @@
             My research spans the foundations and methodology of statistics and machine learning, with particular interests in high-dimensional inference, generative AI, tensor and low-rank learning, optimization, and computational complexity. In parallel, I develop statistical and machine-learning methods for complex scientific data, especially in health and biomedicine.
           </p>
         </div>
-        <aside class="hero-note">
-          <strong>How to read this page</strong>
-          <p>
-            The bibliography remains chronological. Topic filters are provided as alternate views,
-            so theoretical, methodological, computational, and scientific work can be explored
-            without forcing papers into a single identity.
-          </p>
-        </aside>
       </section>
 
-      <section class="research-map" aria-labelledby="research-map-title">
-        <div class="research-map-header">
-          <h2 id="research-map-title">Research across the spectrum</h2>
-          <p>Foundations → methods → scientific impact</p>
-        </div>
-        <div class="map-grid">
-          <article class="map-card foundations">
-            <span class="map-step">Foundations</span>
-            <h3>Statistical &amp; ML theory</h3>
-            <p>High-dimensional inference, minimax theory, concentration, phase transitions, computational limits, and learning theory.</p>
-          </article>
-          <article class="map-card ml">
-            <span class="map-step">Learning</span>
-            <h3>Machine learning &amp; generative AI</h3>
-            <p>Diffusion and flow models, synthetic data, representation learning, transformers, and modern generative methodology.</p>
-          </article>
-          <article class="map-card methods">
-            <span class="map-step">Methods</span>
-            <h3>Tensors, low rank &amp; optimization</h3>
-            <p>Tensor decomposition and regression, matrix methods, Riemannian optimization, functional data, and scalable algorithms.</p>
-          </article>
-          <article class="map-card applications">
-            <span class="map-step">Applications</span>
-            <h3>Scientific &amp; biomedical data</h3>
-            <p>Electronic health records, genomics, single-cell and spatial omics, microbiome, neuroimaging, and other scientific domains.</p>
-          </article>
-        </div>
-      </section>
 
-<section class="featured" aria-labelledby="featured-title">
-  <div class="section-heading">
-    <h2 id="featured-title">Selected work</h2>
-    <p>A small cross-section chosen to make the breadth of the research program immediately visible.</p>
-  </div>
 
-  <div class="featured-grid">
 
-    <article class="featured-card">
-      <span class="label">Synthetic data</span>
-      <h3>
-        <a href="https://arxiv.org/abs/2601.16120">
-          Synthetic Augmentation in Imbalanced Learning: When It Helps, When It Hurts, and How Much to Add
-        </a>
-      </h3>
-      <p>Preprint, 2026.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">Tensor methods</span>
-      <h3>
-        <a href="https://arxiv.org/abs/1703.02724">
-          Tensor SVD: Statistical and computational limits
-        </a>
-      </h3>
-      <p><i>IEEE Transactions on Information Theory</i>, 2018.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">High-dimensional statistics</span>
-      <h3>
-        <a href="https://arxiv.org/abs/1605.00353">
-          Rate-optimal perturbation bounds for singular subspaces with applications to high-dimensional statistics
-        </a>
-      </h3>
-      <p><i>The Annals of Statistics</i>, 2018.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">Semi-supervised inference</span>
-      <h3>
-        <a href="https://arxiv.org/abs/1606.07268">
-          Semi-supervised inference: General theory and estimation of means
-        </a>
-      </h3>
-      <p><i>The Annals of Statistics</i>, 2019.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">Diffusion models</span>
-      <h3>
-        <a href="https://arxiv.org/abs/2209.11215">
-          Sampling is as easy as learning the score: theory for diffusion models with minimal data assumptions
-        </a>
-      </h3>
-      <p>International Conference on Learning Representations (ICLR), 2023 · Notable top 5%.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">Optimization</span>
-      <h3>
-        <a href="https://arxiv.org/abs/2110.12121">
-          On geometric connections of embedded and quotient geometries in Riemannian fixed-rank matrix optimization
-        </a>
-      </h3>
-      <p><i>Mathematics of Operations Research</i>, 2024.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">Microbiome</span>
-      <h3>
-        <a href="https://link.springer.com/article/10.1186/s13059-024-03453-x">
-          TEMPTED: Time-informed dimensionality reduction for longitudinal microbiome studies
-        </a>
-      </h3>
-      <p><i>Genome Biology</i>, 2024.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">Health &amp; EHR</span>
-      <h3>
-        <a href="https://arxiv.org/abs/2310.15290">
-          Reliable generation of privacy-preserving synthetic electronic health record time series via diffusion models
-        </a>
-      </h3>
-      <p><i>Journal of the American Medical Informatics Association</i>, 2024.</p>
-    </article>
-
-    <article class="featured-card">
-      <span class="label">Health &amp; EHR</span>
-      <h3>
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283114/">
-          Timeline registration for electronic health records
-        </a>
-      </h3>
-      <p><i>AMIA Summits on Translational Science Proceedings</i>, 2023 · AMIA Data Science Outstanding Paper Award.</p>
-    </article>
-  </div>
-</section>
 
       <div class="toolbar" aria-label="Publication filters">
         <div class="search-row">
