@@ -1,89 +1,298 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Anru Zhang's Homepage</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta charset="utf-8" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Teaching by Anru Zhang.">
+  <title>Teaching | Anru Zhang</title>
+  <link rel="stylesheet" href="style/modern.css">
+
+  <style>
+    /* Spacing enhancements */
+    .site-header {
+      padding: 1.5rem 0;
+    }
+
+    .header-inner {
+      gap: 2rem;
+    }
+
+    .brand-name {
+      margin: 0 0 0.4rem;
+    }
+
+    .brand-affiliation {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .nav-list {
+      gap: 0.5rem 1.5rem;
+    }
+
+    .nav-list a {
+      display: inline-block;
+      padding: 0.5rem 0;
+    }
+
+    main {
+      padding: 3rem 0 4rem;
+    }
+
+    .hero {
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    .lede {
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .hero-note {
+      padding: 1.5rem;
+    }
+
+    .hero-note p {
+      margin: 0.75rem 0 0;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-top: 4rem;
+    }
+
+    .section:first-of-type {
+      margin-top: 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      margin: 0 0 0.5rem;
+    }
+
+    .section-header p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .course-list {
+      margin: 0;
+      padding: 0;
+    }
+
+    .course-list li {
+      padding: 1.25rem 0;
+      line-height: 1.5;
+    }
+
+    .course-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    .course-list .detail {
+      margin-top: 0.4rem;
+      line-height: 1.65;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 2rem 0;
+    }
+
+    .footer-row {
+      gap: 1rem 2rem;
+    }
+
+    .footer-row p {
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 1.25rem 0;
+      }
+
+      .header-inner {
+        gap: 1.25rem;
+      }
+
+      .nav-list {
+        gap: 0.25rem 1rem;
+      }
+
+      main {
+        padding: 2rem 0 3rem;
+      }
+
+      .hero {
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .section {
+        margin-top: 3rem;
+      }
+
+      .section-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .course-list li {
+        padding: 1rem 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1>Anru Zhang</h1>
-          <h2>Department of Biostatistics &amp; Bioinformatics and Department of Computer Science, Duke University</h2>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <h2 class="brand-name">Anru Zhang</h2>
+        <p class="brand-affiliation">Department of Biostatistics &amp; Bioinformatics and Department of Computer Science, Duke University</p>
       </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+
+      <nav aria-label="Primary">
+        <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="group.html">Group Members</a></li>
-          <li class="selected"><a href="teaching.html">Teaching</a></li>
+          <li class="selected"><a href="teaching.html" aria-current="page">Teaching</a></li>
           <li><a href="software.html">Software</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
-    <div id="site_content">
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <img src="IMG_8383.JPG" width="195" align="middle" alt="Anru Zhang">
-          </div>
-          <div class="sidebar_base"></div>
+  </header>
+
+  <main>
+    <div class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Teaching</p>
+          <p class="lede">Teaching across Duke, UW–Madison, and the University of Pennsylvania, from introductory probability and statistics to high-dimensional inference.</p>
         </div>
-        <div class="sidebar">
-          <!--
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a></br>
-          </div>
-          <div class="sidebar_base"></div>
-          -->
+
+        <aside class="hero-note">
+          <strong>Teaching recognition</strong>
+          <p>At Duke, BIOSTAT 915 received Teaching Excellence Recognition, including Top Instructor and Top-Rated Course recognition for Fall 2025.</p>
+        </aside>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>Duke University</h2>
+          <p>Current institution.</p>
         </div>
-      </div>
-      <div id="content">
-        <h4>At Duke</h4>
-        <ul>
-          <li>Fall 2022: Lecturer for High-Dimensional Statistics and Machine Learning (Biostat/Sta 915).</li>
-          <li>Fall 2020: Lecturer for Current Problems in Biostatistics (Biostat 990).</li>
-        </ul>
 
-        <h4>At UW-Madison</h4>
-        <ul>
-          <li>Fall 2015: Lecturer for Introduction to Mathematical Statistics and Probability I (Stat 309).</li>
-          <li>Fall 2015: Lecturer for Introduction to Mathematical Statistics and Probability II (Stat 310).</li>
-          <li>Fall 2016: Lecturer for Introduction to Mathematical Statistics and Probability I (Stat 309).</li>
-          <li>Fall 2016: Lecturer for Statistical Methods for Bioscience I (Stat 571).</li>
-          <li>Spring 2017: Lecturer for Introduction to Mathematical Statistics and Probability I (Stat 309).</li>
-          <li>Spring 2018: Lecturer for Introduction to Mathematical Statistics and Probability I (Stat 309).</li>
-          <li>Spring 2018: Lecturer for Large Sample Theory of Statistical Inference (Stat 732).</li>
-          <li>Fall 2018: Lecturer for Introduction to Mathematical Statistics and Probability I (Stat 309).</li>
+        <ul class="course-list">
+          <li>
+            <strong>Fall 2022&ndash;Fall 2026</strong> — Lecturer
+            <div class="detail">High-Dimensional Statistics and Machine Learning (Biostat 915 / Sta 915 / Compsci 762)</div>
+          </li>
+          <li>
+            <strong>Spring 2025</strong> — Lecturer
+            <div class="detail">Generative Models (Compsci 590)</div>
+          </li>
+          <li>
+            <strong>Fall 2020</strong> — Lecturer
+            <div class="detail">Current Problems in Biostatistics (Biostat 990)</div>
+          </li>
         </ul>
+      </section>
 
-        <h4>At Penn</h4>
-        <ul>
-          <li>Summer 2014: Lecturer for Statistical Inference (Stat 431).</li>
-          <li>Spring 2014: Teaching Assistant for Statistical Inference (Stat 431).</li>
-          <li>Fall 2012: Recitation Lecturer for Introductory Statistics (Stat 111).</li>
-          <li>Spring 2012: Recitation Lecturer for Advanced Calculus (Math 360).</li>
-          <li>Fall 2011: Recitation Lecturer for Abstract Algebra (Math 502).</li>
+      <section class="section">
+        <div class="section-header">
+          <h2>University of Wisconsin–Madison</h2>
+          <p>Courses taught from 2015–2018.</p>
+        </div>
+
+        <ul class="course-list">
+          <li>
+            <strong>Fall 2015</strong> — Lecturer
+            <div class="detail">Introduction to Mathematical Statistics and Probability I (Stat 309)</div>
+          </li>
+          <li>
+            <strong>Fall 2015</strong> — Lecturer
+            <div class="detail">Introduction to Mathematical Statistics and Probability II (Stat 310)</div>
+          </li>
+          <li>
+            <strong>Fall 2016</strong> — Lecturer
+            <div class="detail">Introduction to Mathematical Statistics and Probability I (Stat 309)</div>
+          </li>
+          <li>
+            <strong>Fall 2016</strong> — Lecturer
+            <div class="detail">Statistical Methods for Bioscience I (Stat 571)</div>
+          </li>
+          <li>
+            <strong>Spring 2017</strong> — Lecturer
+            <div class="detail">Introduction to Mathematical Statistics and Probability I (Stat 309)</div>
+          </li>
+          <li>
+            <strong>Spring 2018</strong> — Lecturer
+            <div class="detail">Introduction to Mathematical Statistics and Probability I (Stat 309)</div>
+          </li>
+          <li>
+            <strong>Spring 2018</strong> — Lecturer
+            <div class="detail">Large Sample Theory of Statistical Inference (Stat 732)</div>
+          </li>
+          <li>
+            <strong>Fall 2018</strong> — Lecturer
+            <div class="detail">Introduction to Mathematical Statistics and Probability I (Stat 309)</div>
+          </li>
         </ul>
-      </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>University of Pennsylvania</h2>
+          <p>Teaching and recitation experience during graduate study.</p>
+        </div>
+
+        <ul class="course-list">
+          <li>
+            <strong>Summer 2014</strong> — Lecturer
+            <div class="detail">Statistical Inference (Stat 431)</div>
+          </li>
+          <li>
+            <strong>Spring 2014</strong> — Teaching Assistant
+            <div class="detail">Statistical Inference (Stat 431)</div>
+          </li>
+          <li>
+            <strong>Fall 2012</strong> — Recitation Lecturer
+            <div class="detail">Introductory Statistics (Stat 111)</div>
+          </li>
+          <li>
+            <strong>Spring 2012</strong> — Recitation Lecturer
+            <div class="detail">Advanced Calculus (Math 360)</div>
+          </li>
+          <li>
+            <strong>Fall 2011</strong> — Recitation Lecturer
+            <div class="detail">Abstract Algebra (Math 502)</div>
+          </li>
+        </ul>
+      </section>
     </div>
-    <div id="footer">
-      <p>Copyright &copy; Anru Zhang | Designed by <a href="http://www.html5webtemplates.co.uk">simplestyle_3</a></p>
-    </div>
-    <p>&nbsp;</p>
-  </div>
+  </main>
 
+  <footer>
+    <div class="page-shell footer-row">
+      <p>&copy; Anru Zhang</p>
+      <p><a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a></p>
+    </div>
+  </footer>
 </body>
 </html>

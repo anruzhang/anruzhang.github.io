@@ -1,176 +1,444 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Anru Zhang's Homepage</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anru Zhang's academic homepage.">
+  <title>Anru Zhang | Duke University</title>
+  <link rel="stylesheet" href="style/modern.css">
+
+  <style>
+    /* Spacing enhancements */
+    .site-header {
+      padding: 1.5rem 0;
+    }
+
+    .header-inner {
+      gap: 2rem;
+    }
+
+    .brand-name {
+      margin: 0 0 0.4rem;
+    }
+
+    .brand-affiliation {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .nav-list {
+      gap: 0.5rem 1.5rem;
+    }
+
+    .nav-list a {
+      display: inline-block;
+      padding: 0.5rem 0;
+    }
+
+    main {
+      padding: 3rem 0 4rem;
+    }
+
+    .hero {
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .hero-home {
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      line-height: 1.15;
+    }
+
+    .lede {
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.7rem 1rem;
+    }
+
+    .profile-photo {
+      margin: 0;
+    }
+
+    .section {
+      margin-top: 4rem;
+    }
+
+    .section:first-of-type {
+      margin-top: 0;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+      margin: 0 0 0.5rem;
+    }
+
+    .section-header p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .prose p {
+      margin: 0;
+      line-height: 1.75;
+    }
+
+    .prose p + p {
+      margin-top: 1.25rem;
+    }
+
+    .card-grid {
+      gap: 1.25rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.75rem;
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .map-grid {
+      gap: 1.25rem;
+    }
+
+    .map-card {
+      padding: 1.5rem;
+    }
+
+    .map-card h3 {
+      margin: 0 0 0.75rem;
+    }
+
+    .map-card p {
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    .callout {
+      padding: 1.5rem;
+    }
+
+    .callout p {
+      margin: 0.75rem 0 0;
+      line-height: 1.7;
+    }
+
+    .news-list {
+      margin: 0;
+      padding: 0;
+    }
+
+    .news-list li {
+      padding: 1rem 0;
+      line-height: 1.65;
+    }
+
+    .news-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    .news-list time {
+      display: inline-block;
+      margin-right: 0.6rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 2rem 0;
+    }
+
+    .footer-row {
+      gap: 1rem 2rem;
+    }
+
+    .footer-row p {
+      margin: 0;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 1.25rem 0;
+      }
+
+      .header-inner {
+        gap: 1.25rem;
+      }
+
+      .nav-list {
+        gap: 0.25rem 1rem;
+      }
+
+      main {
+        padding: 2rem 0 3rem;
+      }
+
+      .hero {
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .quick-links {
+        gap: 0.6rem;
+        margin-top: 1.5rem;
+      }
+
+      .section {
+        margin-top: 3rem;
+      }
+
+      .section-header {
+        margin-bottom: 1.5rem;
+      }
+
+      .card-grid,
+      .map-grid {
+        gap: 1rem;
+      }
+
+      .card,
+      .map-card,
+      .callout {
+        padding: 1.25rem;
+      }
+
+      .news-list li {
+        padding: 0.9rem 0;
+      }
+    }
+    
+    .callout {
+  padding: 1.5rem;
+}
+
+.callout p {
+  margin: 0.75rem 0 0;
+  line-height: 1.7;
+}
+
+/* Book section */
+.book-callout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.book-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 760px) {
+  /* your existing mobile CSS */
+
+  .book-callout {
+    grid-template-columns: 1fr;
+  }
+
+  .book-image {
+    max-width: 220px;
+  }
+}
+  </style>
 </head>
 
 <body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1>Anru Zhang</h1>
-          <h2>Department of Biostatistics &amp; Bioinformatics and Departments of Computer Science, Duke University</h2>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <h2 class="brand-name">Anru Zhang</h2>
+        <p class="brand-affiliation">Department of Biostatistics &amp; Bioinformatics and Department of Computer Science, Duke University</p>
       </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
+
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li class="selected"><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="group.html">Group Members</a></li>
           <li><a href="teaching.html">Teaching</a></li>
-	  	  <li><a href="software.html">Software</a></li>
+          <li><a href="software.html">Software</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
-    <div id="site_content">
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <!-- insert your sidebar items here -->
-			<img src="IMG_8383.JPG" width="195" align="middle">
+  </header>
+
+  <main>
+    <div class="page-shell">
+
+      <section class="hero hero-home">
+        <div>
+          <p class="eyebrow">Statistics · machine learning · AI for science &amp; health</p>
+          <p class="lede">I am a professor at Duke University working on generative AI, high-dimensional statistics, tensor and low-rank learning, optimization, and statistical-computational tradeoffs, with applications in health and biomedicine.</p>
+
+          <div class="quick-links">
+            <a class="pill" href="research.html">Explore research</a>
+            <a class="pill" href="publications.html">Browse publications</a>
+            <a class="pill" href="group.html">Meet the group</a>
+            <a class="pill" href="https://scholar.google.com/citations?user=H-PvgRsAAAAJ&hl=en">Google Scholar</a>
           </div>
-          <div class="sidebar_base"></div>
         </div>
-        <div class="sidebar">
-<!--
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a></br>
-          </div>
-          <div class="sidebar_base"></div>
--->
+
+        <img class="profile-photo" src="IMG_8383.JPG" alt="Anru Zhang">
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2>Background</h2>
+          <p>Appointments, service, awards, and training.</p>
         </div>
-      </div>
-      <div id="content">
-        
-<h4>Background</h4>
+
+        <div class="prose">
+          <p>I am a tenured full professor with joint primary appointments in the Department of <a href="https://biostat.duke.edu">Biostatistics &amp; Bioinformatics (B&amp;B)</a> and the Department of <a href="https://www.cs.duke.edu/">Computer Science</a> at <a href="https://www.duke.edu/">Duke University</a>. I serve as Vice Chair for Research at Duke B&amp;B. I hold secondary appointments in Duke <a href="https://stat.duke.edu/">Statistical Science</a> and <a href="https://ece.duke.edu/">ECE</a>.</p>
+
+          <p>I received my PhD from the University of Pennsylvania in 2015, advised by T. Tony Cai, and my bachelor's degree in mathematics from Peking University in 2010. Before joining Duke, I was an Assistant Professor of Statistics at UW–Madison.</p>
+        </div>
+
+        <div class="card-grid" style="margin-top:20px">
+          <article class="card">
+            <h3>Research leadership</h3>
+            <p>Vice Chair for Research, Duke Biostatistics &amp; Bioinformatics; joint faculty across Biostatistics &amp; Bioinformatics and Computer Science.</p>
+          </article>
+
+          <article class="card">
+            <h3>Editorial service</h3>
 <p>
-  I am a tenured full professor with joint primary appointments in the Department of
-  <a href="https://biostat.duke.edu">Biostatistics &amp; Bioinformatics (B&amp;B)</a> and the Department of
-  <a href="https://www.cs.duke.edu/">Computer Science</a> at
-  <a href="https://www.duke.edu/">Duke University</a>. I serve as Vice Chair for Research at Duke B&amp;B. I hold secondary appointments in Duke <a href="https://stat.duke.edu/">Statistical Science</a> and <a href="https://ece.duke.edu/">ECE</a>.
+  Associate editor roles include <i>The Annals of Statistics</i>,
+  the Theory &amp; Methods and Applications &amp; Case Studies sections of
+  <i>Journal of the American Statistical Association</i>,
+  <i>Statistica Sinica</i>, <i>Statistics and Its Interface</i>,
+  ASA Discoveries, and Statistical Learning and Data Science.
 </p>
 
-<p>I also serve as:</p>
-<ul>
-  <li>Associate Editor for <a href="https://imstat.org/journals-and-publications/annals-of-statistics/"><i>The Annals of Statistics</i></a>;</li>
-  <li>Associate Editor for <a href="https://www.tandfonline.com/journals/uasa20"><i>Journal of the American Statistical Association (Applications &amp; Case Studies)</i></a>;</li>
-  <li>Associate Editor for <a href="https://www.tandfonline.com/journals/uasa20"><i>Journal of the American Statistical Association (Theory &amp; Methods)</i></a>;</li>
-  <li>Associate Editor for <a href="https://www3.stat.sinica.edu.tw/statistica/"><i>Statistica Sinica</i></a>;</li>
-  <li>Associate Editor for <a href="https://www.intlpress.com/site/pub/pages/journals/items/sii/_home/_main/index.php"><i>Statistics and Its Interface</i></a>;</li>
-  <li>Associate Editor for <a href="https://www.tandfonline.com/journals/uasd20"><i>ASA Discoveries</i></a>;</li>
-  <li>Associate Editor for <a href="https://slads.scichina.com/"><i>Statistical Learning and Data Science</i></a>;</li>
-  <li>Guest Editor for <a href="https://www.tandfonline.com/journals/lbps20"><i>Journal of Biopharmaceutical Statistics</i></a>.</li>
-  <li>Area Chair for <a href="https://statsupai.org/STAIX2026/index.html">STAI-X</a> Conference.</li>
-</ul>
+          </article>
 
-<p>
-  I won the <a href="https://community.amstat.org/slds/awards/breiman-award">Leo Breiman Junior Award</a> (2026), <a href="https://community.amstat.org/copss/awards/leadership-academy">COPSS Emerging Leader Award</a> (2024),
-  <a href="https://imstat.org/ims-awards/tweedie-new-researcher-award/">IMS Tweedie Award</a> (2022), as featured here in
-  <a href="https://imstat.org/2022/04/29/anru-zhang-to-receive-2022-tweedie-new-researcher-award/">IMS News</a>,
-  the <a href="https://www.amstat.org/ASA/Your-Career/Awards/Gottfried-E-Noether-Awards.aspx">ASA Gottfried E. Noether Junior Award</a> (2021), as featured
-  <a href="https://imstat.org/2022/04/29/anru-zhang-to-receive-2022-tweedie-new-researcher-award/">here</a>,
-  the <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1944904">NSF CAREER Award</a> (2020),
-  and the AMIA Data Science Outstanding Paper Award (2023)
-  (<a href="https://amia-7498808.hs-sites.com/amia-2023-informatics-summit-daily-update-wednesday-march-15?ecid=ACsprvsnLPxPVupD_lAZBGnr2QiZRGet5vXRcw8033cimEL7UOTzqqrhLD47X5OZ4WkWl3eq5WgK&utm_campaign=Informatics%20Summit%202023&utm_medium=email&_hsmi=250326969&_hsenc=p2ANqtz--7y1qpbtkSRbWW21eM58aWHZ9VM4Jsh0X7Xwm50V88FuqTxU6b-aUoZfJ12vOd0EjlcimN9-sZqfSCTby4RC0Tq2UptQ&utm_content=250326969&utm_source=hs_email">News</a>).
-  At Duke, received a <a href="https://biostat.duke.edu/news/zhang-recognized-teaching-excellence">Teaching Excellence Recognition</a>. I am a <a href="https://www.amstat.org/your-career/awards/asa-fellows">Fellow</a> of American Statistical Association (ASA). From 2021 to 2026, I held the Eugene Anson Stead, Jr. M.D. Associate Professorship. I was an Assistant Professor of Statistics at UW-Madison before joining Duke.
-  I received my PhD from the University of Pennsylvania in 2015 (advised by T. Tony Cai) and my bachelor's degree in mathematics from Peking University in 2010.
-</p>
+          <article class="card">
+            <h3>Recognition</h3>
+            <p>Leo Breiman Junior Award (2026), ASA Fellow (2026), COPSS Emerging Leader Award (2024), AMIA Data Science Outstanding Paper Award (2023), IMS Tweedie Award (2022), ASA Noether Junior Award (2021), Bernoulli Society New Researcher Award (2021), and NSF CAREER Award (2020).</p>
+          </article>
+        </div>
+      </section>
 
-<p>
-  Some keywords of my research: generative AI, tensor learning, electronic health records, healthcare, microbiome studies, high-dimensional statistics, ...
-  You can find a list of our group's publications from the tab above, on
-  <a href="http://arxiv.org/find/all/1/all:+AND+Anru+Zhang/0/1/0/all/0/1">arXiv</a>,
-  or on <a href="https://scholar.google.com/citations?user=H-PvgRsAAAAJ&hl=en">Google Scholar</a>.
-</p>
+      <section class="section">
+        <div class="section-header">
+          <h2>Research directions</h2>
+          <p>A compact view of the main themes developed across the Research and Publications pages.</p>
+        </div>
 
-<p>
-  <b><span style="color:red;">For prospective PhD students:</span></b>
-  Please apply to the PhD programs in
-  <a style="color:red;" href="https://biostat.duke.edu/education/phd-biostatistics/overview">Biostatistics &amp; Bioinformatics</a>,
-  <a style="color:red;" href="https://www.cs.duke.edu/graduate/apply">Computer Science</a>,
-  <a style="color:red;" href="https://ece.duke.edu/phd">Electrical &amp; Computer Engineering</a>,
-  or <a style="color:red;" href="https://genome.duke.edu/education/cbb/admissions">CBB Program</a>.
-  Prospective PhD students interested in working with me can mention this on their applications.
-  Applying to multiple programs at Duke increases your chances and is allowed.
-</p>
+        <div class="map-grid">
+          <a class="map-card foundations" href="research.html#foundations">
+            <h3>Statistical foundations</h3>
+            <p>High-dimensional inference, concentration, phase transitions, and computational limits.</p>
+          </a>
 
-<p>Our group is actively looking for motivated members to work on (1) methodology and theory in machine learning and statistics and/or (2) applications in AI Health.</p>
+          <a class="map-card ml" href="research.html#generative">
+            <h3>Generative AI &amp; synthetic data</h3>
+            <p>Diffusion and flow models, representation learning, transformers, and data augmentation.</p>
+          </a>
 
-<!--
-<p><b><span style="color:red;">A postdoc position is available.</span></b> Joint supervision with other faculty with interests in the foundations of machine learning at Duke CS, ECE, Fuqua, Math, and Statistical Science is possible based on your background/interests and further discussions.</p>
--->
+          <a class="map-card methods" href="research.html#tensor">
+            <h3>Tensors, low rank &amp; optimization</h3>
+            <p>Tensor decomposition, functional data, matrix methods, and Riemannian optimization.</p>
+          </a>
 
-<h4>News</h4>
+          <a class="map-card applications" href="research.html#health">
+            <h3>Health &amp; scientific data</h3>
+            <p>EHR, genomics, microbiome, imaging, networks, and interdisciplinary collaborations.</p>
+          </a>
+        </div>
+      </section>
 
-<ul style="list-style-type:none;">
+      <section class="section">
+        <div class="section-header">
+          <h2>For prospective students and researchers</h2>
+          <p>Current recruiting information.</p>
+        </div>
 
-  <li>[4/2026] I was elected to be a <a href="https://www.amstat.org/your-career/awards/asa-fellows">Fellow</a> of American Statistical Association (ASA), April, 2026.</li>
+        <div class="callout">
+          <strong>Join the group</strong>
+          <p>Our group is actively looking for motivated members to work on (1) methodology and theory in machine learning and statistics and/or (2) applications in AI for Health. Prospective PhD students may apply through Duke programs in Biostatistics &amp; Bioinformatics, Computer Science, Electrical &amp; Computer Engineering, or Computational Biology &amp; Bioinformatics.</p>
+        </div>
+      </section>
 
-  <li>[4/2026] I will teach a short course on generative models at Duke Industry Statistics Symposium (DISS) on April 8, 2026.</li>
+      <section class="section">
+        <div class="section-header">
+          <h2>Selected news</h2>
+          <p>Recent highlights</p>
+        </div>
 
-  <li>[3/2026] I am co-teaching a short course on "Generative Models for Protein Structures and Biomedical Data" with Alex Tong and Fred Peng at ENAR (Indianapolis, IN) on March 15, 2026. All are welcome! Course website <a href="https://pengzhangzhi.github.io/ENAR26-Course-Homepage/">here</a>.</li>
+        <ul class="news-list">
+          <li><time>04/2026</time> Elected <a href="https://www.amstat.org/your-career/awards/asa-fellows">Fellow of the American Statistical Association</a>.</li>
+          <li><time>04/2026</time> Short course on generative models at the Duke Industry Statistics Symposium.</li>
+          <li><time>03/2026</time> Co-taught “Generative Models for Protein Structures and Biomedical Data” at ENAR.</li>
+          <li><time>02/2026</time> Received the <a href="https://community.amstat.org/slds/awards/breiman-award">2026 Leo Breiman Junior Award</a>.</li>
+          <li><time>02/2026</time> “Planner aware path learning in diffusion language models training” accepted as an oral presentation at ICLR 2026.</li>
+          <li><time>01/2026</time> Teaching Excellence Recognition for BIOSTAT 915.</li>
+        </ul>
+      </section>
 
-  <li>[2/2026] I was honored to receive the <a href="https://community.amstat.org/slds/awards/breiman-award">2026 Leo Breiman Junior Award</a> from the ASA Section on Statistical Learning and Data Science (SLDS). Named in honor of <a href="https://en.wikipedia.org/wiki/Leo_Breiman">Dr. Leo Breiman</a>, a pioneering figure in machine learning whose foundational contributions include CART, bagging, and random forests, this award recognizes outstanding theoretical or methodological contributions to machine learning and computational statistics with substantial impact on both the field and practical applications. I am especially inspired by Dr. Breiman's influential perspective on the <a href="https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full">"two cultures"</a> of statistical modeling, which helped shape modern data science.</li>
-
-  <li>[2/2026] I was honored to receive the <a href="https://community.amstat.org/slds/awards/breiman-award">2026 Leo Breiman Junior Award</a> from the ASA Section on Statistical Learning and Data Science (SLDS). Named in honor of <a href="https://en.wikipedia.org/wiki/Leo_Breiman">Dr. Leo Breiman</a>, a pioneering figure in machine learning whose foundational contributions include CART, bagging, and random forests, this award recognizes outstanding theoretical or methodological contributions to machine learning and computational statistics with substantial impact on both the field and practical applications. I am especially inspired by Dr. Breiman's influential perspective on the <a href="https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full">"two cultures"</a> of statistical modeling, which helped shape modern data science.</li>
-
-  <li>[2/2026] <a href="https://openreview.net/forum?id=lAlI5FuIf7">Planner aware path learning in diffusion language models training</a> was accepted as an oral presentation at ICLR 2026!</li>
-
-  <li>[1/2026] I was honored to receive a Teaching Excellence Recognition from the Duke University School of Medicine for BIOSTAT 915 (High-Dimensional Statistics), recognized as both a Top Instructor and a Top-Rated Course in Fall 2025. <a href="https://biostat.duke.edu/news/zhang-recognized-teaching-excellence">News</a></li>
-
-  <li>[10/2025] Our paper <a href="https://arxiv.org/abs/2510.09776">Why Do Transformers Fail to Forecast Time Series In-Context?</a> was selected as an oral presentation (3 out of 68 submissions) for <i>What Can('t) Transformers Do? @ NeurIPS 2025</i>.</li>
-
-  <li>[4/2025] My former PhD advisee, Yuetian Luo, has accepted an offer to become a <b><a style="color:red;" href="#">tenure-track Assistant Professor in the Department of Statistics, Rutgers University</a></b>. Congratulations!</li>
-
-  <li>[2/2025] The former visiting student in our group, Jingyang Li, has accepted a position as an Assistant Professor in the <a href="https://www.fdsm.fudan.edu.cn/en/Profiles.aspx">Department of Statistics &amp; Data Science at the School of Management, Fudan University</a>, starting in January 2026. Congrats!</li>
-
-  <li>[12/2024] PhD student Shiyi Jiang has successfully defended her PhD thesis. She will join the Department of Biomedical Informatics at Columbia University Medical Center as a postdoctoral research fellow after graduation. Congrats!</li>
-
-  <li>Join us to celebrate Ed Hammond! Ed Hammond 90th Celebratory Scientific Symposium "From Foundations to Future of Informatics in Health." January 9–10, 2025, Washington Duke Inn, Durham, NC. For more information, visit the <a href="https://sites.duke.edu/edhammond90/">Ed Hammond Symposium website</a>.<br /></li>
-
-  <div style="text-align: center;">
-    <img src="https://sites.duke.edu/edhammond90/files/2024/08/EH-Icon-1-300x300.jpg" alt="Ed Hammond 90th" width="300" />
+<section class="section">
+  <div class="section-header">
+    <h2>Books &amp; outreach</h2>
   </div>
-  <br />
 
-  <li>[03/2024] My former PhD advisee, Yuchen Zhou, has accepted an offer to become a <b><a style="color:red;" href="#">tenure-track Assistant Professor in the Department of Statistics, University of Illinois Urbana-Champaign</a></b>. Congratulations!</li>
-  <li>[03/2024] I was extremely honored and humbled to receive the <a href="https://community.amstat.org/copss/awards/leadership-academy">COPSS Emerging Leader Award</a>. This award recognizes early career statistical scientists who show evidence of and potential for leadership and who will help shape and strengthen the field.</li>
-  <li>[01/2024] <a href="https://runshitang.github.io/">Runshi Tang</a> has received an honorable mention award in the 2024 Student Paper Competition of the ASA Statistical Learning and Data Science Section for his paper "<a href="https://arxiv.org/abs/2307.00575">Mode-wise Principal Subspace Pursuit and Matrix Spiked Covariance Model</a>." His paper stood out among 79 submissions this year. Congrats!</li>
-  <li>[03/2023] Our paper "Timeline registration for electronic health records" won the <i>Data Science Distinguished Paper Award</i> from the 2023 <a href="https://amia.org/education-events/amia-2023-informatics-summit">AMIA Informatics Summit</a> (only one paper received this award). (<a href="https://amia-7498808.hs-sites.com/amia-2023-informatics-summit-daily-update-wednesday-march-15?ecid=ACsprvsnLPxPVupD_lAZBGnr2QiZRGet5vXRcw8033cimEL7UOTzqqrhLD47X5OZ4WkWl3eq5WgK&utm_campaign=Informatics%20Summit%202023&utm_medium=email&_hsmi=250326969&_hsenc=p2ANqtz--7y1qpbtkSRbWW21eM58aWHZ9VM4Jsh0X7Xwm50V88FuqTxU6b-aUoZfJ12vOd0EjlcimN9-sZqfSCTby4RC0Tq2UptQ&utm_content=250326969&utm_source=hs_email">News</a>)</li>
-  <li>[10/19/2022] My recently graduated PhD student <a href="https://yuetianluo.github.io/index.html">Yuetian Luo</a> won the <a href="https://imstat.org/ims-awards/ims-lawrence-d-brown-ph-d-student-award/" style="color:red;">2023 IMS Lawrence D. Brown Award</a> (this distinction is given to three PhD students in the IMS community)! Yuetian will deliver an award lecture at the Joint Statistical Meetings in Toronto, Canada in August 2023. (<a href="https://imstat.org/wp-content/uploads/2022/11/Bulletin51_8.pdf">IMS News</a>)</li>
-  <li>[8/2022] I received the <a href="https://imstat.org/ims-awards/tweedie-new-researcher-award/" style="color:red;">IMS Tweedie Award</a> (2022) (<a href="https://imstat.org/2022/04/29/anru-zhang-to-receive-2022-tweedie-new-researcher-award/">IMS News</a>) and presented at the IMS New Researcher Conference. This award is given by the Institute of Mathematical Statistics to a single young researcher each year (<a href="figures/IMS-Tweedie-winners.png">previous awardees</a>).</li>
-  <li>[5/2022] Yuetian graduated and will join the <a href="https://datascience.uchicago.edu/engage/fellowships/#program-benefits">University of Chicago Data Science Institute</a> as a postdoctoral fellow starting in 7/2022.</li>
-  <li>[10/26/2021] My PhD student <a href="https://sites.google.com/view/rungang">Rungang</a>, as one of three recipients in the IMS community, won the <a href="https://imstat.org/ims-awards/ims-lawrence-d-brown-ph-d-student-award/" style="color:red;">2022 IMS Lawrence D. Brown Award</a>! Rungang will deliver an award lecture at the <a href="https://www.imsannualmeeting-london2022.com/">2022 IMS Annual Meeting in London</a>.</li>
-</ul>
+  <div class="callout book-callout">
+    <a href="https://pixushi.github.io/Pixu_books.html">
+      <img
+        class="book-image"
+        src="figures/pixu-book.jpeg"
+        alt="Learning Statistics Through Pictures book series"
+      >
+    </a>
 
-		<h4>Contact Information</h4>
-			<p> E-mail: <a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a></p>
-      </div>
+    <div>
+      <strong>Learning Statistics Through Pictures</strong>
+      <p>
+        A bilingual illustrated statistics book series for young readers,
+        introducing statistical ideas through stories and visual examples.
+        <a href="https://pixushi.github.io/Pixu_books.html">Explore the book series →</a>
+      </p>
     </div>
-    <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="publications.html">Research</a> | <a href="publications-category.html">Publications by Topics</a> | <a href="group.html">Group Members</a> | <a href="teaching.html">Teaching</a> | <a href="software.html">Software</a> </p>
-      <p>Copyright &copy; Anru Zhang| Designed by <a href="http://www.html5webtemplates.co.uk">simplestyle_3</a> </p>
-    </div>
-    <p>&nbsp;</p>
   </div>
-<!-- Start of StatCounter Code for Default Guide -->
-<a title="Web Analytics" href="https://statcounter.com/"
-target="_blank"><img
-src="https://c.statcounter.com/12576669/0/7ae82a37/1/"
-alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a>
-<!-- End of StatCounter Code for Default Guide -->
+</section>
 
+    </div>
+  </main>
+
+  <footer>
+    <div class="page-shell footer-row">
+      <p>&copy; Anru Zhang</p>
+      <p><a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a></p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,210 +1,1017 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Publications</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta charset="utf-8" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Publications of Anru R. Zhang: statistical and machine learning foundations, tensor and low-rank methods, optimization, generative AI, and scientific applications.">
+  <meta name="keywords" content="Anru Zhang, statistics, machine learning, high-dimensional statistics, tensor learning, generative AI, optimization, electronic health records, genomics, microbiome">
+  <title>Publications | Anru Zhang</title>
+
+  <style>
+    :root {
+      --ink: #16212b;
+      --muted: #65717d;
+      --line: #dde3e8;
+      --soft: #f6f8fa;
+      --paper: #ffffff;
+      --accent: #155c79;
+      --accent-dark: #0f455c;
+      --accent-soft: #eaf4f8;
+      --theory: #edf2ff;
+      --ml: #f2edff;
+      --tensor: #eaf7f2;
+      --opt: #fff4e6;
+      --science: #f5f1e8;
+      --health: #fceff2;
+      --shadow: 0 12px 32px rgba(22, 33, 43, 0.08);
+      --radius: 14px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    a:hover { color: var(--accent-dark); }
+
+    .site-header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.97);
+    }
+
+    .header-inner,
+    .page-shell {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .brand {
+      padding: 28px 0 20px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-name {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-affiliation {
+      margin: 0;
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    nav {
+      border-top: 1px solid var(--line);
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 24px;
+    }
+
+    .nav-list a {
+      display: inline-block;
+      padding: 13px 0 11px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .nav-list a:hover,
+    .nav-list .selected a {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
+    }
+
+    main { padding: 58px 0 72px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.55fr 0.85fr;
+      gap: 44px;
+      align-items: start;
+      margin-bottom: 46px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.76rem;
+      font-weight: 750;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.35rem, 5vw, 4.65rem);
+      line-height: 1.02;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 760px;
+      color: #34424e;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.16rem, 2vw, 1.42rem);
+      line-height: 1.55;
+    }
+
+    .hero-note {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+    }
+
+    .hero-note strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .research-map {
+      margin: 0 0 52px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .research-map-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .research-map h2,
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+    }
+
+    .research-map-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .map-card {
+      min-height: 176px;
+      padding: 18px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .map-step {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .map-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      line-height: 1.25;
+    }
+
+    .map-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.48;
+    }
+
+    .map-card.foundations { border-top: 4px solid #5773c7; }
+    .map-card.ml { border-top: 4px solid #7b61b5; }
+    .map-card.methods { border-top: 4px solid #3d8a70; }
+    .map-card.applications { border-top: 4px solid #a77a43; }
+
+    .featured {
+      margin-bottom: 60px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-align: right;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .featured-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(22, 33, 43, 0.08);
+    }
+
+    .featured-card .label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .featured-card h3 {
+      margin: 0 0 9px;
+      font-size: 1.08rem;
+      line-height: 1.34;
+    }
+
+    .featured-card h3 a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .featured-card h3 a:hover { color: var(--accent); }
+
+    .featured-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      margin: 0 0 24px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 5px 18px rgba(22, 33, 43, 0.06);
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    #paper-search {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid #cdd5dc;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    #paper-search:focus {
+      outline: 3px solid rgba(21, 92, 121, 0.12);
+      border-color: var(--accent);
+    }
+
+    .result-count {
+      min-width: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .filter-btn {
+      appearance: none;
+      border: 1px solid #cfd6dc;
+      background: #fff;
+      color: #4e5a65;
+      border-radius: 999px;
+      padding: 7px 11px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 650;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+    }
+
+    .pub-section {
+      margin-top: 48px;
+      scroll-margin-top: 112px;
+    }
+
+    .pub-section:first-of-type { margin-top: 0; }
+
+    .pub-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .pub-section-header h2 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .pub-section-header span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .paper-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .paper {
+      padding: 18px 0 17px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+
+    .paper > a:first-of-type,
+    .paper-title {
+      font-weight: 650;
+    }
+
+    .paper a { overflow-wrap: anywhere; }
+
+    .paper .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 9px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 7px;
+      border-radius: 999px;
+      color: #56616b;
+      background: var(--soft);
+      font-size: 0.68rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .tag[data-tag="foundations"] { background: var(--theory); }
+    .tag[data-tag="ml"] { background: var(--ml); }
+    .tag[data-tag="tensor"] { background: var(--tensor); }
+    .tag[data-tag="optimization"] { background: var(--opt); }
+    .tag[data-tag="science"] { background: var(--science); }
+    .tag[data-tag="health"] { background: var(--health); }
+
+    .paper.hidden,
+    .pub-section.hidden { display: none; }
+
+    .award {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .slides {
+      margin-top: 56px;
+      padding: 26px 28px;
+      border-radius: var(--radius);
+      background: var(--soft);
+    }
+
+    .slides h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+    }
+
+    .slides ul {
+      margin: 0;
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 38px;
+    }
+
+    .slides li {
+      margin-bottom: 8px;
+      break-inside: avoid;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-row p { margin: 0; }
+
+    .statcounter {
+      margin-top: 18px;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 20px; }
+      .map-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-grid { grid-template-columns: repeat(2, 1fr); }
+      .brand { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .brand-affiliation { text-align: left; }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      .page-shell { width: min(calc(100% - 26px), var(--max)); }
+      main { padding-top: 38px; }
+      .map-grid,
+      .featured-grid { grid-template-columns: 1fr; }
+      .research-map { padding: 20px; }
+      .research-map-header,
+      .section-heading,
+      .pub-section-header,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .section-heading p { text-align: left; }
+      .search-row { flex-direction: column; }
+      .result-count { min-height: 38px; }
+      .slides ul { columns: 1; }
+      .toolbar { position: static; }
+    }
+
+    @media print {
+      .site-header, .toolbar, .research-map, .featured, .slides, footer { display: none !important; }
+      main { padding: 0; }
+      .page-shell { width: 100%; }
+      .hero { display: block; margin-bottom: 20px; }
+      .hero-note { display: none; }
+      .paper { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1>Anru Zhang</h1>
-          <h2>Department of Biostatistics &amp; Bioinformatics and Department of Computer Science, Duke University</h2>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <h2 class="brand-name">Anru Zhang</h2>
+        <p class="brand-affiliation">Department of Biostatistics &amp; Bioinformatics and Department of Computer Science, Duke University</p>
       </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+      <nav aria-label="Primary">
+        <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Research</a></li>
-          <li class="selected"><a href="publications.html">Publications</a></li>
+          <li class="selected"><a href="publications.html" aria-current="page">Publications</a></li>
           <li><a href="group.html">Group Members</a></li>
           <li><a href="teaching.html">Teaching</a></li>
           <li><a href="software.html">Software</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
-    <div id="site_content">
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <!-- insert your sidebar items here -->
-            <img src="IMG_8383.JPG" width="195" style="display:block;margin:0 auto;" alt="Anru Zhang" />
-          </div>
-          <div class="sidebar_base"></div>
+  </header>
+
+  <main>
+    <div class="page-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Research portfolio</p>
+          <h1>Publications</h1>
+          <p class="lede">
+            My research spans the foundations and methodology of statistics and machine learning, with particular interests in high-dimensional inference, generative AI, tensor and low-rank learning, optimization, and computational complexity. In parallel, I develop statistical and machine-learning methods for complex scientific data, especially in health and biomedicine.
+          </p>
         </div>
-        <div class="sidebar">
-          <!--
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a><br />
-          </div>
-          <div class="sidebar_base"></div>
-          -->
+        <aside class="hero-note">
+          <strong>How to read this page</strong>
+          <p>
+            The bibliography remains chronological. Topic filters are provided as alternate views,
+            so theoretical, methodological, computational, and scientific work can be explored
+            without forcing papers into a single identity.
+          </p>
+        </aside>
+      </section>
+
+      <section class="research-map" aria-labelledby="research-map-title">
+        <div class="research-map-header">
+          <h2 id="research-map-title">Research across the spectrum</h2>
+          <p>Foundations → methods → scientific impact</p>
+        </div>
+        <div class="map-grid">
+          <article class="map-card foundations">
+            <span class="map-step">Foundations</span>
+            <h3>Statistical &amp; ML theory</h3>
+            <p>High-dimensional inference, minimax theory, concentration, phase transitions, computational limits, and learning theory.</p>
+          </article>
+          <article class="map-card ml">
+            <span class="map-step">Learning</span>
+            <h3>Machine learning &amp; generative AI</h3>
+            <p>Diffusion and flow models, synthetic data, representation learning, transformers, and modern generative methodology.</p>
+          </article>
+          <article class="map-card methods">
+            <span class="map-step">Methods</span>
+            <h3>Tensors, low rank &amp; optimization</h3>
+            <p>Tensor decomposition and regression, matrix methods, Riemannian optimization, functional data, and scalable algorithms.</p>
+          </article>
+          <article class="map-card applications">
+            <span class="map-step">Applications</span>
+            <h3>Scientific &amp; biomedical data</h3>
+            <p>Electronic health records, genomics, single-cell and spatial omics, microbiome, neuroimaging, and other scientific domains.</p>
+          </article>
+        </div>
+      </section>
+
+<section class="featured" aria-labelledby="featured-title">
+  <div class="section-heading">
+    <h2 id="featured-title">Selected work</h2>
+    <p>A small cross-section chosen to make the breadth of the research program immediately visible.</p>
+  </div>
+
+  <div class="featured-grid">
+
+    <article class="featured-card">
+      <span class="label">Synthetic data</span>
+      <h3>
+        <a href="https://arxiv.org/abs/2601.16120">
+          Synthetic Augmentation in Imbalanced Learning: When It Helps, When It Hurts, and How Much to Add
+        </a>
+      </h3>
+      <p>Preprint, 2026.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">Tensor methods</span>
+      <h3>
+        <a href="https://arxiv.org/abs/1703.02724">
+          Tensor SVD: Statistical and computational limits
+        </a>
+      </h3>
+      <p><i>IEEE Transactions on Information Theory</i>, 2018.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">High-dimensional statistics</span>
+      <h3>
+        <a href="https://arxiv.org/abs/1605.00353">
+          Rate-optimal perturbation bounds for singular subspaces with applications to high-dimensional statistics
+        </a>
+      </h3>
+      <p><i>The Annals of Statistics</i>, 2018.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">Semi-supervised inference</span>
+      <h3>
+        <a href="https://arxiv.org/abs/1606.07268">
+          Semi-supervised inference: General theory and estimation of means
+        </a>
+      </h3>
+      <p><i>The Annals of Statistics</i>, 2019.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">Diffusion models</span>
+      <h3>
+        <a href="https://arxiv.org/abs/2209.11215">
+          Sampling is as easy as learning the score: theory for diffusion models with minimal data assumptions
+        </a>
+      </h3>
+      <p>International Conference on Learning Representations (ICLR), 2023 · Notable top 5%.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">Optimization</span>
+      <h3>
+        <a href="https://arxiv.org/abs/2110.12121">
+          On geometric connections of embedded and quotient geometries in Riemannian fixed-rank matrix optimization
+        </a>
+      </h3>
+      <p><i>Mathematics of Operations Research</i>, 2024.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">Microbiome</span>
+      <h3>
+        <a href="https://link.springer.com/article/10.1186/s13059-024-03453-x">
+          TEMPTED: Time-informed dimensionality reduction for longitudinal microbiome studies
+        </a>
+      </h3>
+      <p><i>Genome Biology</i>, 2024.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">Health &amp; EHR</span>
+      <h3>
+        <a href="https://arxiv.org/abs/2310.15290">
+          Reliable generation of privacy-preserving synthetic electronic health record time series via diffusion models
+        </a>
+      </h3>
+      <p><i>Journal of the American Medical Informatics Association</i>, 2024.</p>
+    </article>
+
+    <article class="featured-card">
+      <span class="label">Health &amp; EHR</span>
+      <h3>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283114/">
+          Timeline registration for electronic health records
+        </a>
+      </h3>
+      <p><i>AMIA Summits on Translational Science Proceedings</i>, 2023 · AMIA Data Science Outstanding Paper Award.</p>
+    </article>
+  </div>
+</section>
+
+      <div class="toolbar" aria-label="Publication filters">
+        <div class="search-row">
+          <input id="paper-search" type="search" placeholder="Search title, author, venue, year, or topic…" aria-label="Search publications">
+          <div class="result-count" id="result-count" aria-live="polite">All papers</div>
+        </div>
+        <div class="filters" role="group" aria-label="Filter by research area">
+          <button class="filter-btn active" type="button" data-filter="all">All</button>
+          <button class="filter-btn" type="button" data-filter="foundations">Statistical foundations</button>
+          <button class="filter-btn" type="button" data-filter="ml">ML &amp; generative AI</button>
+          <button class="filter-btn" type="button" data-filter="tensor">Tensor &amp; low-rank</button>
+          <button class="filter-btn" type="button" data-filter="optimization">Optimization &amp; computation</button>
+          <button class="filter-btn" type="button" data-filter="science">Scientific applications</button>
+          <button class="filter-btn" type="button" data-filter="health">Health &amp; biomedicine</button>
         </div>
       </div>
-      <div id="content">
 
-        <h4>Slides of recent work</h4>
+      <section class="pub-section" id="preprints">
+        <div class="pub-section-header">
+          <h2>Preprints</h2>
+          <span>Work awaiting publication</span>
+        </div>
+        <ul class="paper-list">
+          <li class="paper">Zhengchi Ma, Pengfei Lyu, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2606.26053">When does synthetic data augmentation improve score-based imbalanced classification?</a>.</li>
+          <li class="paper">Zhengchi Ma and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2601.16120">Synthetic augmentation in imbalanced learning: When it helps, When it hurts, and how much to add</a>.</li>
+          <li class="paper">Jian Lu, Panyu Chen, Miriam Treggiari, Robert Blessing, Danyang Zhuo, Chunhua Weng, William W. Stead, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2607.22954">Toward Automated Detection of Documentation Inconsistencies in Electronic Health Records</a>.</li>
+          <li class="paper">Runshi Tang, Yuefeng Han, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2603.26029">Detection is harder than estimation in certain regimes: Inference for moment and cumulant tensors</a>.</li>
+          <li class="paper">Runshi Tang, Julien Chhor, Olga Klopp, Alexandre B. Tsybakov, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2605.24858">Optimal Estimation of Discrete Multiview Distributions under Heteroskedastic Multinomial Sampling</a>.</li>
+          <li class="paper">Runshi Tang, Anru R. Zhang, Yuefeng Han, and Wei Biao Wu (2026+). <a href="https://arxiv.org/abs/2608.10161">Bandable Cumulant Tensors: Optimal Estimation and Applications in Non-Gaussian Data Modeling</a>.</li>
+          <li class="paper">Fred Zhangzhi Peng, Avishek Joey Bose, Anru R. Zhang, and Alexander Tong (2026+). <a href="https://arxiv.org/abs/2605.07193">Coupling Models for One-Step Discrete Generation</a>.</li>
+          <li class="paper">Fred Zhangzhi Peng, Alexis Fox, Anru R. Zhang, and Alexander Tong (2026+). <a href="https://arxiv.org/abs/2605.06885">Don't Retrain, Align: Adapting Autoregressive LMs to Diffusion LMs via Representation Alignment</a>.</li>
+          <li class="paper">Pengfei Lyu, Zhengchi Ma, Linjun Zhang, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2510.26046">Bias-Corrected Data Synthesis for Imbalanced Learning</a>.</li>
+          <li class="paper">Yufa Zhou, Yixiao Wang, Surbhi Goel, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2510.09776">Why Do Transformers Fail to Forecast Time Series In-Context?</a>, <i>What Can('t) Transformers Do? @ NeurIPS 2025</i>, accepted as an oral presentation (3 out of 68 submissions).</li>
+          <li class="paper">Chenyin Gao, Han Chen, Anru R. Zhang, and Shu Yang (2026+). <a href="https://arxiv.org/abs/2511.15866">Causal inference on sequential treatments via tensor completion</a>.</li>
+          <li class="paper">Runshi Tang, Julien Chhor, Olga Klopp, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2505.23046">Revisit CP tensor decomposition: Statistical optimality and fast convergence</a>.</li>
+          <li class="paper">Jingyang Li, T. Tony Cai, Dong Xia, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2411.15660">Federated PCA and estimation for spiked covariance matrices: Optimal rates and efficient algorithm</a>.</li>
+          <li class="paper">Brett W. Larsen, Tamara G. Kolda, Anru R. Zhang, and Alex H. Williams (2026+). <a href="https://arxiv.org/pdf/2408.05677">Tensor decomposition meets RKHS: Efficient algorithms for smooth and misaligned data</a>.</li>
+          <li class="paper">Shounak Chattopadhyay, Anru R. Zhang, and David Dunson (2026+). <a href="https://arxiv.org/abs/2404.03805">Blessing of dimension in Bayesian inference on covariance matrices</a>.</li>
+          <li class="paper">Arian Maleki, Subhabrata Sen, Sivaraman Balakrishna, Verena Zuber, Chao Gao, Rishabh Dudeja, Christos Thrampoulidis, Anru Zhang, Weijie Su, Jason M. Klusowski, Po-Ling Loh, and Ali Shojaie (2026+). <a href="https://arxiv.org/abs/2605.05076">High-dimensional statistics: Reflections on progress and open problems</a>.</li>
+        </ul>
+      </section>
+
+      <section class="pub-section" id="publications">
+        <div class="pub-section-header">
+          <h2>Publications</h2>
+          <span>Peer-reviewed and accepted work</span>
+        </div>
+        <ul class="paper-list">
+          <li class="paper">Jianbin Tan and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2508.13831">Smooth flow matching for synthesizing functional data</a>, <i>The Annals of Statistics</i>, to appear.</li>
+          <li class="paper">Han Chen, Sitan Chen, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2512.01016">A provably efficient method for tensor ring decomposition and its applications</a>, <i>SIAM Journal on Mathematics of Data Science</i>, to appear.</li>
+          <li class="paper">Jianbin Tan, Pixu Shi, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2410.03619">Functional-SVD for heterogeneous trajectories: Case studies in health</a>, <i>Journal of the American Statistical Association</i>, to appear.</li>
+          <li class="paper">Runshi Tang, Runbing Zheng, Anru R. Zhang, and Carey Priebe (2026+). <a href="https://arxiv.org/abs/2509.05221">A functional tensor model for dynamic multilayer networks with common invariant subspaces and the RKHS estimation</a>, <i>Journal of Computational and Graphical Statistics</i>, to appear.</li>
+          <li class="paper">Haotian Zhuang, Xin Gai, Anru R. Zhang, Wenpin Hou, Zhicheng Ji, and Pixu Shi (2026+). <a href="https://www.biorxiv.org/content/10.1101/2024.09.14.613024v1.abstract">Trajectory-guided dimensionality reduction for multi-sample single-cell RNA-seq data reveals biologically relevant sample-level heterogeneity</a>, <i>Bioinformatics</i>, to appear.</li>
+          <li class="paper">Ayman Ali, Shiyi Jiang, John Rollman, Miriam Treggiari, Zachary Ginsberg, Daniel M. Buckland, Christopher Lindsell, James Jung, Bruce W. Rogers, and Anru R. Zhang (2026). Comparing Clinically Derived Feature Imputation and Phenotype Labels versus Data-Driven Imputation and Clustering Approaches, <i>Proceedings of AMIA Annual Symposium</i> to appear.</li>
+          <li class="paper">Zihan Zhu, Xin Gai, and Anru R. Zhang (2026+). <a href="http://arxiv.org/abs/2405.03042">Functional post-clustering selective inference with applications to EHR</a>, <i>Electronic Journal of Statistics</i>, to appear.</li>
+          <li class="paper">Fred Zhangzhi Peng, Zachary Bezemek, Jarrid Rector-Brooks, Shuibai Zhang, Michael M. Bronstein, Anru Zhang, Joey Bose, and Alexander Tong (2026). <a href="https://openreview.net/forum?id=lAlI5FuIf7">Planner aware path learning in diffusion language models training</a>, <i>International Conference on Learning Representations (ICLR)</i>, accepted as an oral presentation (top 1.18% of all submissions).</li>
+          <li class="paper">Chengzhu Huang and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2501.06652">High-order accurate inference on manifolds</a>, <i>The Annals of Statistics</i>, to appear.</li>
+          <li class="paper">Yufa Zhou, Yixiao Wang, Xunjian Yin, Shuyan Zhou, and Anru R. Zhang (2026). <a href="https://arxiv.org/abs/2510.09782">The geometry of reasoning: Flowing logics in representation space</a>, <i>International Conference on Learning Representations (ICLR)</i>, to appear.</li>
+          <li class="paper">Xin Gai, Shiyi Jiang, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2501.07336">Subtype-aware registration of longitudinal electronic health records</a>, <i>Journal of the American Statistical Association (Applications &amp; Case Studies)</i>, to appear.</li>
+          <li class="paper">Joshua Agterberg and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2410.06381">Statistical inference for low-rank tensors: heteroskedasticity, subgaussianity, and applications</a>, <i>The Annals of Statistics</i>, to appear.</li>
+          <li class="paper">Runshi Tang, Tamara G. Kolda, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2410.14046">Tensor decomposition with unaligned observations</a>, <i>SIAM Journal on Matrix Analysis and Applications</i>, to appear.</li>
+          <li class="paper">Raymond Xiong, Panyu Chen, Tianze Dong, Jian Lu, Louis Hu, Nathan Yu, Benjamin Goldstein, Danyang Zhuo, and Anru R. Zhang (2026). <a href="https://arxiv.org/abs/2511.00772">Reliable Curation of EHR Dataset via Large Language Models under Environmental Constraints</a>, <i>2026 IEEE International Conference on Healthcare Informatics</i>.</li>
+          <li class="paper">Tongyu Li, Fang Yao, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2506.09358">Functional tensor regression</a>, <i>Statistica Sinica</i>, to appear.</li>
+          <li class="paper">Jianbin Tan, Yan Zhang, Chuan Hong, T. Tony Cai, Tianxi Cai, and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2506.09208">Integrated Analysis for Electronic Health Records with Structured and Sporadic Missingness</a>, <i>Journal of Biomedical Informatics</i>, 171, 104933.</li>
+          <li class="paper">Huifang Ma, Yilong Qu, Xingyuan Zhang, Anru R. Zhang, and Zhicheng Ji (2025). <a href="https://www.biorxiv.org/content/10.1101/2024.10.07.617088v2.abstract">Vispro improves imaging analysis for Visium spatial transcriptomics</a>, <i>Genome Biology</i>, 26, 1-31.</li>
+          <li class="paper">Pixu Shi, Cameron Martino, Rungang Han, Stefan Janssen, Gregory Buck, Myrna Serrano, Kouros Owzar, Rob Knight, Liat Shenhav, and Anru R. Zhang (2024). <a href="https://link.springer.com/article/10.1186/s13059-024-03453-x">TEMPTED: Time-informed dimensionality reduction for longitudinal microbiome studies</a>, <i>Genome Biology</i>, 25, 317.</li>
+          <li class="paper">Yuetian Luo, Xudong Li, and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2108.01772">Nonconvex factorization and manifold formulations are almost equivalent in low-rank matrix optimization</a>, <i>INFORMS Journal on Optimization</i>, 7, 1-82.</li>
+          <li class="paper">Joshua Agterberg and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2212.08642">Estimating higher-order mixed memberships via the l_{2,\infty} tensor perturbation bound</a>, <i>Journal of the American Statistical Association</i>, 120, 1214-1224.</li>
+          <li class="paper">Runshi Tang, Ming Yuan, and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2307.00575">Mode-wise principal subspace pursuit and matrix spiked covariance model</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 87, 232-255.</li>
+          <li class="paper">Muhang Tian, Bernie Chen, Allan Guo, Shiyi Jiang, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2310.15290">Reliable generation of privacy-preserving synthetic electronic health record time series via diffusion models</a>, <i>Journal of the American Medical Informatics Association</i>, 31, 2529-2539.</li>
+          <li class="paper">Jing Lei, Anru R. Zhang, and Zihan Zhu (2024). <a href="https://arxiv.org/abs/2311.07773">Computational and statistical thresholds in multi-layer stochastic block models</a>, <i>The Annals of Statistics</i>, 52, 2431–2455.</li>
+          <li class="paper">Yuetian Luo and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2206.08756">Tensor-on-tensor regression: Riemannian optimization, over-parameterization, statistical-computational gap, and their interplay</a>, <i>The Annals of Statistics</i>, 52, 2583–2612. [<a href="https://github.com/yuetianluo/Tensor-on-tensor-regression">R Package</a>]</li>
+          <li class="paper">Shiyi Jiang, Xin Gai, Miriam Treggiari, William Stead, Yuankang Zhao, David Page, and Anru R. Zhang (2024). <a href="http://arxiv.org/abs/2311.08629">Soft phenotyping for sepsis via EHR time-aware soft clustering</a>, <i>Journal of Biomedical Informatics</i>, 152, 104615.</li>
+          <li class="paper">Yuetian Luo, Xudong Li, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2110.12121">On geometric connections of embedded and quotient geometries in Riemannian fixed-rank matrix optimization</a>, <i>Mathematics of Operations Research</i>, 49, 782–825.</li>
+          <li class="paper">Yuetian Luo, Xudong Li, Wen Huang, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2011.08360">Recursive importance sketching for rank constrained least squares</a>, <i>Operations Research</i>, 72, 237–256.</li>
+          <li class="paper">Ziang Chen, Jianfeng Lu, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2207.10665">One-dimensional tensor network recovery</a>, <i>SIAM Journal on Matrix Analysis and Applications</i>, 45, 1217–1244.</li>
+          <li class="paper">Rungang Han, Pixu Shi, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2108.04201">Guaranteed functional tensor singular value decomposition</a>, <i>Journal of the American Statistical Association</i>, 119, 995–1007.</li>
+          <li class="paper">Ilias Diakonikolas, Daniel Kane, Yuetian Luo, and Anru R. Zhang (2023). <a href="https://proceedings.mlr.press/v195/diakonikolas23d.html">Statistical and computational limits for tensor-on-tensor association detection</a>, <i>Proceedings of Thirty Sixth Conference on Learning Theory (COLT)</i>, 195, 5260–5310.</li>
+          <li class="paper">Shiyi Jiang, Rungang Han, Krishnendu Chakrabarty, David Page, William Stead, and Anru R. Zhang (2023). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283114/">Timeline registration for electronic health records</a>, <i>AMIA Summits on Translational Science Proceedings</i>, 291–299.<span class="award">This paper won the <i>Data Science Outstanding Paper Award</i> from the 2023 AMIA Informatics Summit. Only one paper receives this award.</span></li>
+          <li class="paper">Yuetian Luo and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2104.12031">Low-rank tensor estimation via Riemannian Gauss-Newton: Statistical optimality and second-order convergence</a>, <i>Journal of Machine Learning Research</i>, 24, 1–48.</li>
+          <li class="paper">Peter Hoff, Andrew McCormack, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2207.12484">Core shrinkage covariance estimation for matrix-variate data</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 85, 1659–1679.</li>
+          <li class="paper">Rungang Han and Anru R. Zhang (2023). <a href="http://arxiv.org/abs/2205.10151">Discussion of "Vintage factor analysis with Varimax performs statistical inference"</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 85, 1069–1070.</li>
+          <li class="paper">Sitan Chen, Jerry Li, Yuanzhi Li, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2204.04209">Learning polynomial transformations</a>, <i>2023 Annual ACM Symposium on Theory of Computing (STOC)</i>.</li>
+          <li class="paper">Sitan Chen, Sinho Chewi, Jerry Li, Yuanzhi Li, Adil Salim, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2209.11215">Sampling is as easy as learning the score: Theory for diffusion models with minimal data assumptions</a>, <i>International Conference on Learning Representations (ICLR)</i>, accept: notable-top-5%.</li>
+          <li class="paper">Jiashun Jin, Tracy Ke, Paxton Turner, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2303.05024">Phase transition for detecting a small community in a large network</a>, <i>2023 International Conference on Learning Representations (ICLR)</i>, accepted.</li>
+          <li class="paper">Chengzhuo Ni, Yaqi Duan, Munther Dahleh, Mengdi Wang, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2105.01136">Learning good state and action representations for Markov decision process via tensor decomposition</a>, <i>Journal of Machine Learning Research</i>, 24, 1–53.<br>A short version was presented at <i>International Symposium on Information Theory (ISIT)</i>, 2021.</li>
+          <li class="paper">Rungang Han, Yuetian Luo, Miaoyan Wang, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2012.09996">Exact clustering in tensor block model: Statistical optimality and computational limit</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 84, 1666–1698. [<a href="https://github.com/Rungang/HLloyd">R Package</a>]<span class="award">This paper received the <i>Student's Paper Award</i> from the Statistical Learning and Data Science Section of the American Statistical Association, 2021.</span></li>
+          <li class="paper">Dong Xia, Anru R. Zhang, and Yuchen Zhou (2023). <a href="https://arxiv.org/abs/2012.14844">Inference for low-rank tensors -- No need to debias</a>, <i>The Annals of Statistics</i>, 50, 1220–1245.</li>
+          <li class="paper">Yuetian Luo and Anru R. Zhang (2022). <a href="http://arxiv.org/abs/2005.10743">Tensor clustering with planted structures: Statistical optimality and computational limits</a>, <i>The Annals of Statistics</i>, 50, 584–613.</li>
+          <li class="paper">Tony Cai, Yihong Wu, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/1810.08316">Heteroskedastic PCA: Algorithm, optimality, and applications</a>, <i>The Annals of Statistics</i>, 50, 53–80.</li>
+          <li class="paper">Rungang Han, Rebecca Willett, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/2002.11255">An optimal statistical and computational framework for generalized tensor estimation</a>, <i>The Annals of Statistics</i>, 50, 1–29.</li>
+          <li class="paper">Tony Cai, Rungang Han, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/2008.12434">On the non-asymptotic concentration of heteroskedastic Wishart-type matrix</a>, <i>Electronic Journal of Probability</i>, 27, 1–40.</li>
+          <li class="paper">Yuchen Zhou, Lili Zheng, Yazhen Wang, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/2010.02482">Optimal high-order tensor SVD via tensor-train orthogonal iteration</a>, <i>IEEE Transactions on Information Theory</i>, 66, 5927–5964. [<a href="https://github.com/Lili-Zheng-stat/TTOI">R Package</a>]</li>
+          <li class="paper">Pixu Shi, Yuchen Zhou, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/1811.11709">High-dimensional log-error-in-variable regression with applications to microbial compositional data analysis</a>, <i>Biometrika</i>, 109, 405–420.</li>
+          <li class="paper">Ziwei Zhu, Xudong Li, Mengdi Wang, and Anru Zhang (2022). <a href="https://arxiv.org/abs/1907.00113">Learning Markov models via low-rank optimization</a>, <i>Operations Research</i>, 70, 2384–2398.</li>
+          <li class="paper">Tony Cai, Yuchen Zhou, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/1909.09851">Sparse Group Lasso: Optimal Sample Complexity, Convergence Rate, and Statistical Inference</a>, <i>IEEE Transactions on Information Theory</i>, 68, 5975–6002.</li>
+          <li class="paper">Anru R. Zhang and Kehui Chen (2022). <a href="https://arxiv.org/abs/1711.00101">Nonparametric covariance estimation for mixed longitudinal studies, with applications in midlife women's health</a>, <i>Statistica Sinica</i>, 32, 345–365.</li>
+          <li class="paper">Yuetian Luo, Rungang Han, and Anru R. Zhang (2021). <a href="https://arxiv.org/abs/2008.01312">A Schatten-q low-rank matrix perturbation analysis via perturbation projection error bound</a>, <i>Linear Algebra and Its Applications</i>, 630, 225–240.</li>
+          <li class="paper">Anru R. Zhang, Yuetian Luo, Garvesh Raskutti, and Ming Yuan (2021). <a href="https://arxiv.org/abs/2008.02437">A sharp blockwise tensor perturbation bound for orthogonal iteration</a>, <i>Journal of Machine Learning Research</i>, 22, 1–48.<span class="award">This paper received the <i>Biometrics Early-Stage Investigator Award</i> by the Biometrics Section of the American Statistical Association, 2019.</span></li>
+          <li class="paper">Anru R. Zhang, Yuetian Luo, Garvesh Raskutti, and Ming Yuan (2020). <a href="https://arxiv.org/abs/1911.03804">ISLET: fast and optimal low-rank tensor regression via importance sketchings</a>, <i><a href="https://www.siam.org/publications/journals/siam-journal-on-mathematics-of-data-science-simods/editorial-board">SIAM Journal on Mathematics of Data Science</a></i>, 2, 444–479. [<a href="https://github.com/yuetianluo/ISLET">R package</a>]</li>
+          <li class="paper">Yuetian Luo and Anru R. Zhang (2020). <a href="http://proceedings.mlr.press/v125/luo20a.html">Open problem: Average-case hardness of hypergraphic planted clique detection</a>, <i>Conference on Learning Theory (COLT)</i>, 125, 3852–3856. <a href="https://www.colt2020.org/virtual/papers/paper_OP01.html">[talk and slides]</a></li>
+          <li class="paper">Anru R. Zhang and Yuchen Zhou (2020). <a href="https://arxiv.org/abs/1810.09006">On the non-asymptotic and sharp tail bounds of random variables</a>, <i>Stat</i>, 9, e314.</li>
+          <li class="paper">Botao Hao, Anru R. Zhang, and Guang Cheng (2020). <a href="https://arxiv.org/abs/1801.09326">Sparse and low-rank tensor estimation via cubic sketchings</a>, <i>IEEE Transactions on Information Theory</i>, 66, 9.<br>A short version published in <i>Proceedings of the 23rd International Conference on Artificial Intelligence and Statistics (AISTATS)</i>, 2020.</li>
+          <li class="paper">Yuanpei Cao, Anru R. Zhang, and Hongzhe Li (2020). <a href="https://arxiv.org/abs/1706.02380">Multi-sample estimation of bacterial composition matrix in metagenomics data</a>, <i>Biometrika</i>, 107, 75–92.</li>
+          <li class="paper">Anru R. Zhang and Mengdi Wang (2020). <a href="https://arxiv.org/abs/1802.02920">Spectral state compression of Markov processes</a>, <i>IEEE Transactions on Information Theory</i>, 66, 3202–3231.</li>
+          <li class="paper">Anru Zhang (2019). <a href="https://arxiv.org/abs/1611.01129">Cross: Efficient low-rank tensor completion</a>, <i>The Annals of Statistics</i>, 47, 936–964. [<a href="https://github.com/anruzhang/cross">R package</a>]</li>
+          <li class="paper">Anru Zhang and Rungang Han (2019). <a href="https://arxiv.org/abs/1809.01796">Optimal sparse singular value decomposition for high-dimensional high-order data</a>, <i>Journal of the American Statistical Association</i>, 114, 1708–1725. [<a href="https://github.com/Rungang/STAT-SVD">R package</a>]</li>
+          <li class="paper">Anru Zhang, Lawrence Brown, and Tony Cai (2019). <a href="http://arxiv.org/abs/1606.07268">Semi-supervised inference: General theory and estimation of means</a>, <i>The Annals of Statistics</i>, 47, 2538–2566.</li>
+          <li class="paper">Anru Zhang and Dong Xia (2018). <a href="https://arxiv.org/abs/1703.02724">Tensor SVD: Statistical and computational limits</a>, <i>IEEE Transactions on Information Theory</i>, 64, 1–28. [<a href="https://github.com/Rungang/STAT-SVD">An R implementation</a>]</li>
+          <li class="paper">Quan Zhou, Philip Ernst, Kari Lock Morgan, Donald Rubin, and Anru Zhang (2018). <a href="https://arxiv.org/abs/1706.04182">Sequential rerandomization</a>, <i>Biometrika</i>, 105, 745–752.</li>
+          <li class="paper">Tony Cai and Anru Zhang (2018). <a href="http://arxiv.org/abs/1605.00353">Rate-optimal perturbation bounds for singular subspaces with applications to high-dimensional statistics</a>, <i>The Annals of Statistics</i>, 46, 60–89.</li>
+          <li class="paper">Mengdi Wang, Xudong Li, and Anru Zhang (2018). <a href="http://proceedings.mlr.press/v80/li18g.html">Estimation of Markov chain via rank-constrained likelihood</a>, <i>International Conference on Machine Learning (ICML)</i>, PMLR 80:3033–3042.</li>
+          <li class="paper">Tianxi Cai, Tony Cai, and Anru Zhang (2016). <a href="http://arxiv.org/abs/1504.01823">Structured matrix completion with applications in genomic data integration</a>, <i>Journal of the American Statistical Association</i>, 111, 621–633. [<a href="https://github.com/YifuLiu/StructureMC">R package</a>]</li>
+          <li class="paper">Pixu Shi, Anru Zhang, and Hongzhe Li (2016). <a href="http://arxiv.org/abs/1603.00974">Regression analysis for microbiome compositional data</a>, <i>The Annals of Applied Statistics</i>, 10, 1019–1040. [<a href="https://github.com/pixushi/CI_compositional_regression">Matlab package</a>]</li>
+          <li class="paper">Hyunseung Kang, Anru Zhang, Tony Cai, and Dylan Small (2016). <a href="http://arxiv.org/abs/1401.5755">Instrumental variables estimation with some invalid instruments and its application to Mendelian randomization</a>, <i>Journal of the American Statistical Association</i>, 111, 132–144. [<a href="https://cran.r-project.org/web/packages/sisVIVE/index.html">R Package</a>]</li>
+          <li class="paper">Tony Cai and Anru Zhang (2016). <a href="http://arxiv.org/abs/1605.04358">Minimax rate-optimal estimation of high-dimensional covariance matrices with incomplete data</a>, <i>Journal of Multivariate Analysis</i>, 150, 55–74.</li>
+          <li class="paper">Tony Cai and Anru Zhang (2016). <a href="http://arxiv.org/abs/1408.5907">Inference for high-dimensional differential correlation matrices</a>, <i>Journal of Multivariate Analysis</i>, 143, 107–126.</li>
+          <li class="paper">Tony Cai and Anru Zhang (2015). <a href="http://arxiv.org/abs/1310.5791">ROP: matrix recovery via rank-one projections</a>, <i>The Annals of Statistics</i>, 43, 102–138.</li>
+          <li class="paper">Tony Cai and Anru Zhang (2014). <a href="https://arxiv.org/abs/1306.1154">Sparse representation of a polytope and recovery of sparse signals and low-rank matrices</a>, <i>IEEE Transactions on Information Theory</i>, 60, 122–132.</li>
+          <li class="paper">Tony Cai and Anru Zhang (2013). <a href="https://arxiv.org/abs/1304.3531">Compressed sensing and affine rank minimization under restricted isometry</a>, <i>IEEE Transactions on Signal Processing</i>, 61, 3279–3290.</li>
+          <li class="paper">Tony Cai and Anru Zhang (2013). <a href="https://arxiv.org/abs/1302.1236">Sharp RIP bound for sparse signal and low-rank matrix recovery</a>, <i>Applied and Computational Harmonic Analysis</i>, 35, 74–93.</li>
+        </ul>
+      </section>
+
+      <section class="pub-section" id="collaborative">
+        <div class="pub-section-header">
+          <h2>Collaborative research</h2>
+          <span>Interdisciplinary collaborations</span>
+        </div>
+        <ul class="paper-list">
+          <li class="paper">Chenyin Gao, Shu Yang, and Anru R. Zhang (2026). <a href="https://arxiv.org/abs/2209.12715">Self-supervised imaging denoising via low-rank tensor approximated convolutional neural network</a>, <i>IET Image Processing</i>, 20, 13205.</li>
+          <li class="paper">Sreekanth Vemulapalli, Fawaz Alenezi, Hyeon Jeong, Anna Giczewska, Karen Chiswell, Pamela Douglas, Anru R. Zhang, Svati Shah, Ricardo Henao, and Andrew Wang (2025). Machine learning computer vision point of care decision support of echocardiographic identification of hypertrophic cardiomyopathy, <i>JACC: Advances</i>, 4, 101746.</li>
+          <li class="paper">Annalise Schweickart, Richa Batra, Bryan J. Neth, Cameron Martino, Liat Shenhav, Anru R. Zhang, et al. (2024). <a href="https://www.nature.com/articles/s44324-024-00016-3">Serum and CSF metabolomics analysis shows Mediterranean Ketogenic Diet mitigates risk factors of Alzheimer's disease</a>, <i>npj Metabolic Health and Disease</i>, 2, 15.</li>
+          <li class="paper">Zachary M. Burcham, Aeriel D. Belk, Bridget B. McGivern, Amina Bouslimani, Parsa Ghadermazi, Cameron Martino, Liat Shenhav, Anru R. Zhang, et al. (2024). <a href="https://www.nature.com/articles/s41564-023-01580-y">Universal interkingdom microbial network decomposes mammals despite varied climate, location, and seasonal influence</a>, <i>Nature Microbiology</i>, 9, 595–613.</li>
+          <li class="paper">Anru R. Zhang, Ryan Bell, Chen An, Runshi Tang, Shana Hall, Cliburn Chan, Kareem Al-Khalil, and Christina Meade (2023). <a href="https://arxiv.org/abs/2310.14146">Cocaine use prediction with tensor-based machine learning on multimodal MRI connectome data</a>, <i>Neural Computation</i>, 36, 107–127.</li>
+          <li class="paper">Aditi U. Gurkar, Akos A. Gerencser, Ana L. Mora, Andrew C. Nelson, Anru R. Zhang, et al. <a href="https://www.nature.com/articles/s43587-023-00446-6">Spatial mapping of cellular senescence: emerging challenges and opportunities</a>, <i>Nature Aging</i>, 3, 776–790, 2023.</li>
+          <li class="paper">Sheri Towe, Runshi Tang, Matt Gibson, Anru R. Zhang, and Christina Meade. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0376871623011614?dgcid=raven_sd_aip_email">Longitudinal changes in neurocognitive performance related to drug use intensity in a sample of persons with and without HIV who use stimulants</a>, <i>Drug and Alcohol Dependence</i>, to appear.</li>
+          <li class="paper">Christine Park, Beiyu Liu, Stephen C. Harward, Anru R. Zhang, et al. <a href="https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/28/5/article-p533.xml">Ventriculomegaly and postoperative intraventricular blood predict cerebrospinal fluid diversion following posterior fossa tumor resection</a>, <i>Journal of Neurosurgery: Pediatrics</i>, 28, 533–543, 2021.</li>
+          <li class="paper">Chenyu Zhang, Rungang Han, Anru Zhang, and Paul Voyles. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0304399120302746?via%3Dihub">Denoising Atomic Resolution 4D Scanning Transmission Electron Microscopy Data with Tensor Singular Value Decomposition</a>, <i>Ultramicroscopy</i>, 219, 113123, 2020.</li>
+          <li class="paper">Wan, C. et al. <a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz655/5542876">LTMG: a novel statistical modeling of transcriptional expression states in single-cell RNA-Seq data</a>, <i>Nucleic Acids Research</i>, 2019.</li>
+        </ul>
+      </section>
+
+      <section class="pub-section" id="other">
+        <div class="pub-section-header">
+          <h2>Other manuscripts</h2>
+          <span>Thesis and early work</span>
+        </div>
+        <ul class="paper-list">
+          <li class="paper"><a href="http://repository.upenn.edu/edissertations/1172/">High-dimensional statistical inference: from vector to matrix</a><br><i>PhD Thesis</i>, 2015.</li>
+        </ul>
+      </section>
+
+      <section class="slides" aria-labelledby="slides-title">
+        <h2 id="slides-title">Slides from selected earlier work</h2>
         <ul>
           <li><a href="slides/2019-tensor-svd.pdf">Optimal singular value decomposition for high-dimensional tensor data</a></li>
-          <li><a href="slides/Second-order-rank-constrained-optimization.pdf">A fast and easy-to-implement second-order method for rank-constrained optimization &amp; low-rank matrix recovery/completion</a></li>
-          <li><a href="slides/2019islet.pdf">Optimal and efficient tensor regression analysis via importance sketching</a></li>
+          <li><a href="slides/Second-order-rank-constrained-optimization.pdf">Second-order methods for rank-constrained optimization and low-rank recovery</a></li>
+          <li><a href="slides/2019islet.pdf">Optimal and efficient tensor regression via importance sketching</a></li>
           <li><a href="slides/2019perturbation.pdf">Unilateral perturbation bound</a></li>
           <li><a href="slides/slide-semisupervised.pdf">Semi-supervised inference</a></li>
         </ul>
-
-        <h4>Preprints awaiting publication :-)</h4>
-        <ul>
-          <li>Zhengchi Ma, Pengfei Lyu, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2606.26053">When does synthetic data augmentation improve score-based imbalanced classification?</a>.</li>
-          <li>Zhengchi Ma and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2601.16120">Synthetic augmentation in imbalanced learning: When it helps, When it hurts, and how much to add</a>.</li>
-          <li>Jian Lu, Panyu Chen, Miriam Treggiari, Robert Blessing, Danyang Zhuo, Chunhua Weng, William W. Stead, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2607.22954">Toward Automated Detection of Documentation Inconsistencies in Electronic Health Records</a>.</li>
-          <li>Runshi Tang, Yuefeng Han, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2603.26029">Detection is harder than estimation in certain regimes: Inference for moment and cumulant tensors</a>.</li>
-          <li>Runshi Tang, Julien Chhor, Olga Klopp, Alexandre B. Tsybakov, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2605.24858">Optimal Estimation of Discrete Multiview Distributions under Heteroskedastic Multinomial Sampling</a>.</li>
-          <li>Runshi Tang, Anru R. Zhang, Yuefeng Han, and Wei Biao Wu (2026+). <a href="https://arxiv.org/abs/2608.10161">Bandable Cumulant Tensors: Optimal Estimation and Applications in Non-Gaussian Data Modeling</a>.</li>
-          <li>Fred Zhangzhi Peng, Avishek Joey Bose, Anru R. Zhang, and Alexander Tong (2026+). <a href="https://arxiv.org/abs/2605.07193">Coupling Models for One-Step Discrete Generation</a>.</li>
-          <li>Fred Zhangzhi Peng, Alexis Fox, Anru R. Zhang, and Alexander Tong (2026+). <a href="https://arxiv.org/abs/2605.06885">Don't Retrain, Align: Adapting Autoregressive LMs to Diffusion LMs via Representation Alignment</a>.</li>
-          <li>Pengfei Lyu, Zhengchi Ma, Linjun Zhang, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2510.26046">Bias-Corrected Data Synthesis for Imbalanced Learning</a>.</li>
-          <li>Yufa Zhou, Yixiao Wang, Surbhi Goel, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2510.09776">Why Do Transformers Fail to Forecast Time Series In-Context?</a>, <i>What Can('t) Transformers Do? @ NeurIPS 2025</i>, accepted as an oral presentation (3 out of 68 submissions).</li>
-          <li>Chenyin Gao, Han Chen, Anru R. Zhang, and Shu Yang (2026+). <a href="https://arxiv.org/abs/2511.15866">Causal inference on sequential treatments via tensor completion</a>.</li>
-          <li>Runshi Tang, Julien Chhor, Olga Klopp, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2505.23046">Revisit CP tensor decomposition: Statistical optimality and fast convergence</a>.</li>
-          <li>Jingyang Li, T. Tony Cai, Dong Xia, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2411.15660">Federated PCA and estimation for spiked covariance matrices: Optimal rates and efficient algorithm</a>.</li>
-          <li>Brett W. Larsen, Tamara G. Kolda, Anru R. Zhang, and Alex H. Williams (2026+). <a href="https://arxiv.org/pdf/2408.05677">Tensor decomposition meets RKHS: Efficient algorithms for smooth and misaligned data</a>.</li>
-          <li>Shounak Chattopadhyay, Anru R. Zhang, and David Dunson (2026+). <a href="https://arxiv.org/abs/2404.03805">Blessing of dimension in Bayesian inference on covariance matrices</a>.</li>
-          <li>Arian Maleki, Subhabrata Sen, Sivaraman Balakrishna, Verena Zuber, Chao Gao, Rishabh Dudeja, Christos Thrampoulidis, Anru Zhang, Weijie Su, Jason M. Klusowski, Po-Ling Loh, and Ali Shojaie (2026+). <a href="https://arxiv.org/abs/2605.05076">High-dimensional statistics: Reflections on progress and open problems</a>.</li>
-        </ul>
-
-        <h4>Publications</h4>
-        <ul>
-          <li>Jianbin Tan and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2508.13831">Smooth flow matching for synthesizing functional data</a>, <I>The Annals of Statistics</I>, to appear.</li>
-          <li>Han Chen, Sitan Chen, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2512.01016">A provably efficient method for tensor ring decomposition and its applications</a>, <I>SIAM Journal on Mathematics of Data Science</I>, to appear.</li>
-          <li>Jianbin Tan, Pixu Shi, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2410.03619">Functional-SVD for heterogeneous trajectories: Case studies in health</a>, <i>Journal of the American Statistical Association</i>, to appear.</li>
-          <li>Runshi Tang, Runbing Zheng, Anru R. Zhang, and Carey Priebe (2026+). <a href="https://arxiv.org/abs/2509.05221">A functional tensor model for dynamic multilayer networks with common invariant subspaces and the RKHS estimation</a>, <I>Journal of Computational and Graphical Statistics</I>, to appear.</li>
-          <li>Haotian Zhuang, Xin Gai, Anru R. Zhang, Wenpin Hou, Zhicheng Ji, and Pixu Shi (2026+). <a href="https://www.biorxiv.org/content/10.1101/2024.09.14.613024v1.abstract">Trajectory-guided dimensionality reduction for multi-sample single-cell RNA-seq data reveals biologically relevant sample-level heterogeneity</a>, <i>Bioinformatics</i>, to appear.</li>
-          <li>Ayman Ali, Shiyi Jiang, John Rollman, Miriam Treggiari, Zachary Ginsberg, Daniel M. Buckland, Christopher Lindsell, James Jung, Bruce W. Rogers, and Anru R. Zhang (2026). Comparing Clinically Derived Feature Imputation and Phenotype Labels versus Data-Driven Imputation and Clustering Approaches, <I>Proceedings of AMIA Annual Symposium</I> to appear.</li>
-          <li>Zihan Zhu, Xin Gai, and Anru R. Zhang (2026+). <a href="http://arxiv.org/abs/2405.03042">Functional post-clustering selective inference with applications to EHR</a>, <I>Electronic Journal of Statistics</I>, to appear.</li>
-          <li>Fred Zhangzhi Peng, Zachary Bezemek, Jarrid Rector-Brooks, Shuibai Zhang, Michael M. Bronstein, Anru Zhang, Joey Bose, and Alexander Tong (2026). <a href="https://openreview.net/forum?id=lAlI5FuIf7">Planner aware path learning in diffusion language models training</a>, <i>International Conference on Learning Representations (ICLR)</i>, accepted as an oral presentation (top 1.18% of all submissions).</li>
-          <li>Chengzhu Huang and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2501.06652">High-order accurate inference on manifolds</a>, <i>The Annals of Statistics</i>, to appear.</li>
-          <li>Yufa Zhou, Yixiao Wang, Xunjian Yin, Shuyan Zhou, and Anru R. Zhang (2026). <a href="https://arxiv.org/abs/2510.09782">The geometry of reasoning: Flowing logics in representation space</a>, <i>International Conference on Learning Representations (ICLR)</i>, to appear. </li>
-          <li>Xin Gai, Shiyi Jiang, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2501.07336">Subtype-aware registration of longitudinal electronic health records</a>, <i>Journal of the American Statistical Association (Applications &amp; Case Studies)</i>, to appear.</li>
-          <li>Joshua Agterberg and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2410.06381">Statistical inference for low-rank tensors: heteroskedasticity, subgaussianity, and applications</a>, <i>The Annals of Statistics</i>, to appear.</li>
-          <li>Runshi Tang, Tamara G. Kolda, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2410.14046">Tensor decomposition with unaligned observations</a>, <i>SIAM Journal on Matrix Analysis and Applications</i>, to appear.</li>
-          <li>Raymond Xiong, Panyu Chen, Tianze Dong, Jian Lu, Louis Hu, Nathan Yu, Benjamin Goldstein, Danyang Zhuo, and Anru R. Zhang (2026). <a href="https://arxiv.org/abs/2511.00772">Reliable Curation of EHR Dataset via Large Language Models under Environmental Constraints</a>, <i>2026 IEEE International Conference on Healthcare Informatics</i>.</li>
-          <li>Tongyu Li, Fang Yao, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2506.09358">Functional tensor regression</a>, <i>Statistica Sinica</i>, to appear.</li>
-          <li>Jianbin Tan, Yan Zhang, Chuan Hong, T. Tony Cai, Tianxi Cai, and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2506.09208">Integrated Analysis for Electronic Health Records with Structured and Sporadic Missingness</a>, <i>Journal of Biomedical Informatics</i>, 171, 104933.</li>
-          <li>Huifang Ma, Yilong Qu, Xingyuan Zhang, Anru R. Zhang, and Zhicheng Ji (2025). <a href="https://www.biorxiv.org/content/10.1101/2024.10.07.617088v2.abstract">Vispro improves imaging analysis for Visium spatial transcriptomics</a>, <i>Genome Biology</i>, 26, 1-31.</li>
-          <li>Pixu Shi, Cameron Martino, Rungang Han, Stefan Janssen, Gregory Buck, Myrna Serrano, Kouros Owzar, Rob Knight, Liat Shenhav, and Anru R. Zhang (2024). <a href="https://www.biorxiv.org/content/10.1101/2023.07.26.550749v1">TEMPTED: Time-informed dimensionality reduction for longitudinal microbiome studies</a>, <i>Genome Biology</i>, 25, 317.</li>
-          <li>Yuetian Luo, Xudong Li, and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2108.01772">Nonconvex factorization and manifold formulations are almost equivalent in low-rank matrix optimization</a>, <i>INFORMS Journal on Optimization</i>, 7, 1-82.</li>
-          <li>Joshua Agterberg and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2212.08642">Estimating higher-order mixed memberships via the l_{2,\infty} tensor perturbation bound</a>, <i>Journal of the American Statistical Association</i>, 120, 1214-1224.</li>
-          <li>Runshi Tang, Ming Yuan, and Anru R. Zhang (2025). <a href="https://arxiv.org/abs/2307.00575">Mode-wise principal subspace pursuit and matrix spiked covariance model</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 87, 232-255.</li>
-          <li>Muhang Tian, Bernie Chen, Allan Guo, Shiyi Jiang, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2310.15290">Reliable generation of privacy-preserving synthetic electronic health record time series via diffusion models</a>, <i>Journal of the American Medical Informatics Association</i>, 31, 2529-2539.</li>
-          <li>Jing Lei, Anru R. Zhang, and Zihan Zhu (2024). <a href="https://arxiv.org/abs/2311.07773">Computational and statistical thresholds in multi-layer stochastic block models</a>, <i>The Annals of Statistics</i>, 52, 2431–2455.</li>
-          <li>Yuetian Luo and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2206.08756">Tensor-on-tensor regression: Riemannian optimization, over-parameterization, statistical-computational gap, and their interplay</a>, <i>The Annals of Statistics</i>, 52, 2583–2612. [<a href="https://github.com/yuetianluo/Tensor-on-tensor-regression">R Package</a>]</li>
-          <li>Shiyi Jiang, Xin Gai, Miriam Treggiari, William Stead, Yuankang Zhao, David Page, and Anru R. Zhang (2024). <a href="http://arxiv.org/abs/2311.08629">Soft phenotyping for sepsis via EHR time-aware soft clustering</a>, <i>Journal of Biomedical Informatics</i>, 152, 104615.</li>
-          <li>Yuetian Luo, Xudong Li, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2110.12121">On geometric connections of embedded and quotient geometries in Riemannian fixed-rank matrix optimization</a>, <i>Mathematics of Operations Research</i>, 49, 782–825.</li>
-          <li>Yuetian Luo, Xudong Li, Wen Huang, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2011.08360">Recursive importance sketching for rank constrained least squares</a>, <i>Operations Research</i>, 72, 237–256.</li>
-          <li>Ziang Chen, Jianfeng Lu, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2207.10665">One-dimensional tensor network recovery</a>, <i>SIAM Journal on Matrix Analysis and Applications</i>, 45, 1217–1244.</li>
-          <li>Rungang Han, Pixu Shi, and Anru R. Zhang (2024). <a href="https://arxiv.org/abs/2108.04201">Guaranteed functional tensor singular value decomposition</a>, <i>Journal of the American Statistical Association</i>, 119, 995–1007.</li>
-          <li>Ilias Diakonikolas, Daniel Kane, Yuetian Luo, and Anru R. Zhang (2023). <a href="https://proceedings.mlr.press/v195/diakonikolas23d.html">Statistical and computational limits for tensor-on-tensor association detection</a>, <i>Proceedings of Thirty Sixth Conference on Learning Theory (COLT)</i>, 195, 5260–5310.</li>
-          <li>Shiyi Jiang, Rungang Han, Krishnendu Chakrabarty, David Page, William Stead, and Anru R. Zhang (2023). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10283114/">Timeline registration for electronic health records</a>, <i>AMIA Summits on Translational Science Proceedings</i>, 291–299.<br />
-            <span style="display: inline-block; margin-left: 0px;"><span style="color:gray;">(This paper won the <i>Data Science Distinguished Paper Award</i> from 2023 <a href="https://amia.org/education-events/amia-2023-informatics-summit">AMIA Informatics Summit</a>. Only one paper receives this award.)</span></span>
-          </li>
-          <li>Yuetian Luo and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2104.12031">Low-rank tensor estimation via Riemannian Gauss-Newton: Statistical optimality and second-order convergence</a>, <i>Journal of Machine Learning Research</i>, 24, 1–48.</li>
-          <li>Peter Hoff, Andrew McCormack, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2207.12484">Core shrinkage covariance estimation for matrix-variate data</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 85, 1659–1679.</li>
-          <li>Rungang Han and Anru R. Zhang (2023). <a href="http://arxiv.org/abs/2205.10151">Discussion of "Vintage factor analysis with Varimax performs statistical inference"</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 85, 1069–1070.</li>
-          <li>Sitan Chen, Jerry Li, Yuanzhi Li, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2204.04209">Learning polynomial transformations</a>, <i>2023 Annual ACM Symposium on Theory of Computing (STOC)</i>.</li>
-          <li>Sitan Chen, Sinho Chewi, Jerry Li, Yuanzhi Li, Adil Salim, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2209.11215">Sampling is as easy as learning the score: Theory for diffusion models with minimal data assumptions</a>, <i>International Conference on Learning Representations (ICLR)</i>, accept: notable-top-5%.</li>
-          <li>Jiashun Jin, Tracy Ke, Paxton Turner, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2303.05024">Phase transition for detecting a small community in a large network</a>, <i>2023 International Conference on Learning Representations (ICLR)</i>, accepted.</li>
-          <li>Chengzhuo Ni, Yaqi Duan, Munther Dahleh, Mengdi Wang, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2105.01136">Learning good state and action representations for Markov decision process via tensor decomposition</a>, <i>Journal of Machine Learning Research</i>, 24, 1–53.<br />
-            A short version was presented at <i>International Symposium on Information Theory (ISIT)</i>, 2021.
-          </li>
-          <li>Rungang Han, Yuetian Luo, Miaoyan Wang, and Anru R. Zhang (2023). <a href="https://arxiv.org/abs/2012.09996">Exact clustering in tensor block model: Statistical optimality and computational limit</a>, <i>Journal of the Royal Statistical Society, Series B</i>, 84, 1666–1698. [<a href="https://github.com/Rungang/HLloyd">R Package</a>]<br />
-            <span style="display: inline-block; margin-left: 0px;"><span style="color:gray;">(This paper received the <i>Student's Paper Award</i> from the Statistical Learning and Data Science Section of the American Statistical Association, 2021)</span></span>
-          </li>
-          <li>Dong Xia, Anru R. Zhang, and Yuchen Zhou (2023). <a href="https://arxiv.org/abs/2012.14844">Inference for low-rank tensors -- No need to debias</a>, <i>The Annals of Statistics</i>, 50, 1220–1245.</li>
-          <li>Yuetian Luo and Anru R. Zhang (2022). <a href="http://arxiv.org/abs/2005.10743">Tensor clustering with planted structures: Statistical optimality and computational limits</a>, <i>The Annals of Statistics</i>, 50, 584–613.</li>
-          <li>Tony Cai, Yihong Wu, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/1810.08316">Heteroskedastic PCA: Algorithm, optimality, and applications</a>, <i>The Annals of Statistics</i>, 50, 53–80.</li>
-          <li>Rungang Han, Rebecca Willett, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/2002.11255">An optimal statistical and computational framework for generalized tensor estimation</a>, <i>The Annals of Statistics</i>, 50, 1–29.</li>
-          <li>Tony Cai, Rungang Han, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/2008.12434">On the non-asymptotic concentration of heteroskedastic Wishart-type matrix</a>, <i>Electronic Journal of Probability</i>, 27, 1–40.</li>
-          <li>Yuchen Zhou, Lili Zheng, Yazhen Wang, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/2010.02482">Optimal high-order tensor SVD via tensor-train orthogonal iteration</a>, <i>IEEE Transactions on Information Theory</i>, 66, 5927–5964. [<a href="https://github.com/Lili-Zheng-stat/TTOI">R Package</a>]<br /></li>
-          <li>Pixu Shi, Yuchen Zhou, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/1811.11709">High-dimensional log-error-in-variable regression with applications to microbial compositional data analysis</a>, <i>Biometrika</i>, 109, 405–420.</li>
-          <li>Ziwei Zhu, Xudong Li, Mengdi Wang, and Anru Zhang (2022). <a href="https://arxiv.org/abs/1907.00113">Learning Markov models via low-rank optimization</a>, <i>Operations Research</i>, 70, 2384–2398.</li>
-          <li>Tony Cai, Yuchen Zhou, and Anru R. Zhang (2022). <a href="https://arxiv.org/abs/1909.09851">Sparse Group Lasso: Optimal Sample Complexity, Convergence Rate, and Statistical Inference</a>, <i>IEEE Transactions on Information Theory</i>, 68, 5975–6002.</li>
-          <li>Anru R. Zhang and Kehui Chen (2022). <a href="https://arxiv.org/abs/1711.00101">Nonparametric covariance estimation for mixed longitudinal studies, with applications in midlife women's health</a>, <i>Statistica Sinica</i>, 32, 345–365.</li>
-          <li>Yuetian Luo, Rungang Han, and Anru R. Zhang (2021). <a href="https://arxiv.org/abs/2008.01312">A Schatten-q low-rank matrix perturbation analysis via perturbation projection error bound</a>, <i>Linear Algebra and Its Applications</i>, 630, 225–240.</li>
-          <li>Anru R. Zhang, Yuetian Luo, Garvesh Raskutti, and Ming Yuan (2021). <a href="https://arxiv.org/abs/2008.02437">A sharp blockwise tensor perturbation bound for orthogonal iteration</a>, <i>Journal of Machine Learning Research</i>, 22, 1–48.<br />
-            <span style="color:gray;">(This paper received <i>Biometrics Early-Stage Investigator Award</i> by the Biometrics Section of the American Statistical Association, 2019)</span>
-          </li>
-          <li>Anru R. Zhang, Yuetian Luo, Garvesh Raskutti, and Ming Yuan (2020). <a href="https://arxiv.org/abs/1911.03804">ISLET: fast and optimal low-rank tensor regression via importance sketchings</a>, <i><a href="https://www.siam.org/publications/journals/siam-journal-on-mathematics-of-data-science-simods/editorial-board">SIAM Journal on Mathematics of Data Science</a></i>, 2, 444–479. [<a href="https://github.com/yuetianluo/ISLET">R package</a>]</li>
-          <li>Yuetian Luo and Anru R. Zhang (2020). <a href="http://proceedings.mlr.press/v125/luo20a.html">Open problem: Average-case hardness of hypergraphic planted clique detection</a>, <i>Conference on Learning Theory (COLT)</i>, 125, 3852–3856. <a href="https://www.colt2020.org/virtual/papers/paper_OP01.html">[talk and slides]</a></li>
-          <li>Anru R. Zhang and Yuchen Zhou (2020). <a href="https://arxiv.org/abs/1810.09006">On the non-asymptotic and sharp tail bounds of random variables</a>, <i>Stat</i>, 9, e314.</li>
-          <li>Botao Hao, Anru R. Zhang, and Guang Cheng (2020). <a href="https://arxiv.org/abs/1801.09326">Sparse and low-rank tensor estimation via cubic sketchings</a>, <i>IEEE Transactions on Information Theory</i>, 66, 9.<br />
-            A short version published in <i>Proceedings of the 23rd International Conference on Artificial Intelligence and Statistics (AISTATS)</i>, 2020.
-          </li>
-          <li>Yuanpei Cao, Anru R. Zhang, and Hongzhe Li (2020). <a href="https://arxiv.org/abs/1706.02380">Multi-sample estimation of bacterial composition matrix in metagenomics data</a>, <i>Biometrika</i>, 107, 75–92.</li>
-          <li>Anru R. Zhang and Mengdi Wang (2020). <a href="https://arxiv.org/abs/1802.02920">Spectral state compression of Markov processes</a>, <i>IEEE Transactions on Information Theory</i>, 66, 3202–3231.</li>
-          <li>Anru Zhang (2019). <a href="https://arxiv.org/abs/1611.01129">Cross: Efficient low-rank tensor completion</a>, <i>The Annals of Statistics</i>, 47, 936–964. [<a href="https://github.com/anruzhang/cross">R package</a>]</li>
-          <li>Anru Zhang and Rungang Han (2019). <a href="https://arxiv.org/abs/1809.01796">Optimal sparse singular value decomposition for high-dimensional high-order data</a>, <i>Journal of the American Statistical Association</i>, 114, 1708–1725. [<a href="https://github.com/Rungang/STAT-SVD">R package</a>]</li>
-          <li>Anru Zhang, Lawrence Brown, and Tony Cai (2019). <a href="http://arxiv.org/abs/1606.07268">Semi-supervised inference: General theory and estimation of means</a>, <i>The Annals of Statistics</i>, 47, 2538–2566.</li>
-          <li>Anru Zhang and Dong Xia (2018). <a href="https://arxiv.org/abs/1703.02724">Tensor SVD: Statistical and computational limits</a>, <i>IEEE Transactions on Information Theory</i>, 64, 1–28. [<a href="https://github.com/Rungang/STAT-SVD">An R implementation</a>]</li>
-          <li>Quan Zhou, Philip Ernst, Kari Lock Morgan, Donald Rubin, and Anru Zhang (2018). <a href="https://arxiv.org/abs/1706.04182">Sequential rerandomization</a>, <i>Biometrika</i>, 105, 745–752.</li>
-          <li>Tony Cai and Anru Zhang (2018). <a href="http://arxiv.org/abs/1605.00353">Rate-optimal perturbation bounds for singular subspaces with applications to high-dimensional statistics</a>, <i>The Annals of Statistics</i>, 46, 60–89.</li>
-          <li>Mengdi Wang, Xudong Li, and Anru Zhang (2018). <a href="http://proceedings.mlr.press/v80/li18g.html">Estimation of Markov chain via rank-constrained likelihood</a>, <i>International Conference on Machine Learning (ICML)</i>, PMLR 80:3033–3042.</li>
-          <li>Tianxi Cai, Tony Cai, and Anru Zhang (2016). <a href="http://arxiv.org/abs/1504.01823">Structured matrix completion with applications in genomic data integration</a>, <i>Journal of the American Statistical Association</i>, 111, 621–633. [<a href="https://github.com/YifuLiu/StructureMC">R package</a>]</li>
-          <li>Pixu Shi, Anru Zhang, and Hongzhe Li (2016). <a href="http://arxiv.org/abs/1603.00974">Regression analysis for microbiome compositional data</a>, <i>The Annals of Applied Statistics</i>, 10, 1019–1040. [<a href="https://github.com/pixushi/CI_compositional_regression">Matlab package</a>]</li>
-          <li>Hyunseung Kang, Anru Zhang, Tony Cai, and Dylan Small (2016). <a href="http://arxiv.org/abs/1401.5755">Instrumental variables estimation with some invalid instruments and its application to Mendelian randomization</a>, <i>Journal of the American Statistical Association</i>, 111, 132–144. [<a href="https://cran.r-project.org/web/packages/sisVIVE/index.html">R Package</a>]</li>
-          <li>Tony Cai and Anru Zhang (2016). <a href="http://arxiv.org/abs/1605.04358">Minimax rate-optimal estimation of high-dimensional covariance matrices with incomplete data</a>, <i>Journal of Multivariate Analysis</i>, 150, 55–74.</li>
-          <li>Tony Cai and Anru Zhang (2016). <a href="http://arxiv.org/abs/1408.5907">Inference for high-dimensional differential correlation matrices</a>, <i>Journal of Multivariate Analysis</i>, 143, 107–126.</li>
-          <li>Tony Cai and Anru Zhang (2015). <a href="http://arxiv.org/abs/1310.5791">ROP: matrix recovery via rank-one projections</a>, <i>The Annals of Statistics</i>, 43, 102–138.</li>
-          <li>Tony Cai and Anru Zhang (2014). <a href="https://arxiv.org/abs/1306.1154">Sparse representation of a polytope and recovery of sparse signals and low-rank matrices</a>, <i>IEEE Transactions on Information Theory</i>, 60, 122–132.</li>
-          <li>Tony Cai and Anru Zhang (2013). <a href="https://arxiv.org/abs/1304.3531">Compressed sensing and affine rank minimization under restricted isometry</a>, <i>IEEE Transactions on Signal Processing</i>, 61, 3279–3290.</li>
-          <li>Tony Cai and Anru Zhang (2013). <a href="https://arxiv.org/abs/1302.1236">Sharp RIP bound for sparse signal and low-rank matrix recovery</a>, <i>Applied and Computational Harmonic Analysis</i>, 35, 74–93.</li>
-        </ul>
-
-        <h4>Collaborative Research</h4>
-        <ul>
-          <li>Chenyin Gao, Shu Yang, and Anru R. Zhang (2026). <a href="https://arxiv.org/abs/2209.12715">Self-supervised imaging denoising via low-rank tensor approximated convolutional neural network</a>, <i>IET Image Processing</i>, 20, 13205.</li>
-          <li>Sreekanth Vemulapalli, Fawaz Alenezi, Hyeon Jeong, Anna Giczewska, Karen Chiswell, Pamela Douglas, Anru R. Zhang, Svati Shah, Ricardo Henao, and Andrew Wang (2025). Machine learning computer vision point of care decision support of echocardiographic identification of hypertrophic cardiomyopathy, <i>JACC: Advances</i>, 4, 101746.</li>
-          <li>Annalise Schweickart, Richa Batra, Bryan J. Neth, Cameron Martino, Liat Shenhav, Anru R. Zhang, et al. (2024). <a href="https://www.nature.com/articles/s44324-024-00016-3">Serum and CSF metabolomics analysis shows Mediterranean Ketogenic Diet mitigates risk factors of Alzheimer's disease</a>, <i>npj Metabolic Health and Disease</i>, 2, 15.</li>
-          <li>Zachary M. Burcham, Aeriel D. Belk, Bridget B. McGivern, Amina Bouslimani, Parsa Ghadermazi, Cameron Martino, Liat Shenhav, Anru R. Zhang, et al. (2024). <a href="https://www.nature.com/articles/s41564-023-01580-y">Universal interkingdom microbial network decomposes mammals despite varied climate, location, and seasonal influence</a>, <i>Nature Microbiology</i>, 9, 595–613.</li>
-          <li>Anru R. Zhang, Ryan Bell, Chen An, Runshi Tang, Shana Hall, Cliburn Chan, Kareem Al-Khalil, and Christina Meade (2023). <a href="https://arxiv.org/abs/2310.14146">Cocaine use prediction with tensor-based machine learning on multimodal MRI connectome data</a>, <i>Neural Computation</i>, 36, 107–127.</li>
-          <li>Aditi U. Gurkar, Akos A. Gerencser, Ana L. Mora, Andrew C. Nelson, Anru R. Zhang, et al. <a href="https://www.nature.com/articles/s43587-023-00446-6">Spatial mapping of cellular senescence: emerging challenges and opportunities</a>, <i>Nature Aging</i>, 3, 776–790, 2023.</li>
-          <li>Sheri Towe, Runshi Tang, Matt Gibson, Anru R. Zhang, and Christina Meade. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0376871623011614?dgcid=raven_sd_aip_email">Longitudinal changes in neurocognitive performance related to drug use intensity in a sample of persons with and without HIV who use stimulants</a>, <i>Drug and Alcohol Dependence</i>, to appear.</li>
-          <li>Christine Park, Beiyu Liu, Stephen C. Harward, Anru R. Zhang, et al. <a href="https://thejns.org/pediatrics/view/journals/j-neurosurg-pediatr/28/5/article-p533.xml">Ventriculomegaly and postoperative intraventricular blood predict cerebrospinal fluid diversion following posterior fossa tumor resection</a>, <i>Journal of Neurosurgery: Pediatrics</i>, 28, 533–543, 2021.</li>
-          <li>Chenyu Zhang, Rungang Han, Anru Zhang, and Paul Voyles. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0304399120302746?via%3Dihub">Denoising Atomic Resolution 4D Scanning Transmission Electron Microscopy Data with Tensor Singular Value Decomposition</a>, <i>Ultramicroscopy</i>, 219, 113123, 2020.</li>
-          <li>Wan, C. et al. <a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkz655/5542876">LTMG: a novel statistical modeling of transcriptional expression states in single-cell RNA-Seq data</a>, <i>Nucleic Acids Research</i>, 2019.</li>
-        </ul>
-
-        <h4>Other Manuscripts</h4>
-        <ul>
-          <li><a href="http://repository.upenn.edu/edissertations/1172/">High-dimensional statistical inference: from vector to matrix</a><br />
-            <i>PhD Thesis</i>, 2015.
-          </li>
-          <li><a href="http://arxiv.org/abs/1305.4896">Methods to calculate the upper bound of Gini coefficient based on grouped data and the result for China</a> (with Pixu Shi)<br />
-            <i>preprint of the Institute of Mathematics, Peking University</i>, 2010–20.
-          </li>
-        </ul>
-
-      </div>
+      </section>
     </div>
-    <div id="footer">
-      <p>Copyright &copy; Anru Zhang | Designed by <a href="http://www.html5webtemplates.co.uk">simplestyle_3</a></p>
+  </main>
+
+  <footer>
+    <div class="page-shell footer-row">
+      <p>Copyright &copy; Anru Zhang</p>
+      <p><a href="index.html">Home</a> · <a href="research.html">Research</a> · <a href="software.html">Software</a></p>
     </div>
-    <p>&nbsp;</p>
-  </div>
-  <!-- Start of StatCounter Code for Default Guide -->
-  <a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img
-      src="https://c.statcounter.com/12576669/0/7ae82a37/1/"
-      alt="Web Analytics"
-      referrerPolicy="no-referrer-when-downgrade"></a>
-  <!-- End of StatCounter Code for Default Guide -->
+    <div class="page-shell statcounter">
+      <!-- Start of StatCounter Code for Default Guide -->
+      <a title="Web Analytics" href="https://statcounter.com/" target="_blank" rel="noopener">
+        <img src="https://c.statcounter.com/12576669/0/7ae82a37/1/" alt="Web Analytics" referrerpolicy="no-referrer-when-downgrade">
+      </a>
+      <!-- End of StatCounter Code for Default Guide -->
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const papers = Array.from(document.querySelectorAll('.paper'));
+      const sections = Array.from(document.querySelectorAll('.pub-section'));
+      const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+      const search = document.getElementById('paper-search');
+      const resultCount = document.getElementById('result-count');
+      let activeFilter = 'all';
+
+      const rules = {
+        foundations: [
+          'inference', 'minimax', 'optimal', 'optimality', 'statistical', 'concentration',
+          'phase transition', 'threshold', 'perturbation', 'covariance', 'wishart',
+          'heteroskedastic', 'semi-supervised', 'compressed sensing', 'restricted isometry',
+          'sparse group lasso', 'bayesian', 'detection', 'estimation'
+        ],
+        ml: [
+          'diffusion', 'flow matching', 'generative', 'generation', 'synthetic', 'transformer',
+          'language model', 'representation', 'learning polynomial', 'markov decision',
+          'machine learning', 'iclr', 'colt', 'stoc', 'aistats', 'neural'
+        ],
+        tensor: [
+          'tensor', 'low-rank', 'low rank', 'matrix completion', 'matrix recovery',
+          'singular value', 'svd', 'spiked covariance', 'rank-one', 'rank constrained',
+          'matrix-variate', 'principal subspace'
+        ],
+        optimization: [
+          'optimization', 'riemannian', 'gauss-newton', 'nonconvex', 'algorithm',
+          'computational', 'efficient', 'convergence', 'sketching', 'factorization',
+          'rank-constrained', 'rank constrained'
+        ],
+        science: [
+          'genomic', 'genomics', 'microbiome', 'microbial', 'metagenomic',
+          'single-cell', 'single cell', 'spatial transcriptomics', 'rna-seq',
+          'imaging', 'mri', 'electron microscopy', 'metabolomics', 'scientific'
+        ],
+        health: [
+          'health', 'electronic health record', 'ehr', 'sepsis', 'clinical',
+          'phenotyp', 'alzheimer', 'hiv', 'cocaine', 'mendelian', 'neurosurgery',
+          'biomedical', 'patient'
+        ]
+      };
+
+      const labels = {
+        foundations: 'Statistical foundations',
+        ml: 'ML & generative AI',
+        tensor: 'Tensor & low-rank',
+        optimization: 'Optimization & computation',
+        science: 'Scientific applications',
+        health: 'Health & biomedicine'
+      };
+
+      function inferTags(paper) {
+        const text = paper.textContent.toLowerCase();
+        const tags = [];
+        Object.entries(rules).forEach(([key, terms]) => {
+          if (terms.some(term => text.includes(term))) tags.push(key);
+        });
+
+        /* Papers are allowed to span areas. If no rule fires, retain them under "All" only. */
+        paper.dataset.tags = tags.join(' ');
+
+        if (tags.length) {
+          const holder = document.createElement('div');
+          holder.className = 'tags';
+          tags.forEach(tag => {
+            const pill = document.createElement('span');
+            pill.className = 'tag';
+            pill.dataset.tag = tag;
+            pill.textContent = labels[tag];
+            holder.appendChild(pill);
+          });
+          paper.appendChild(holder);
+        }
+      }
+
+      function applyFilters() {
+        const q = search.value.trim().toLowerCase();
+        let shown = 0;
+
+        papers.forEach(paper => {
+          const matchesText = !q || paper.textContent.toLowerCase().includes(q);
+          const matchesTag = activeFilter === 'all' || paper.dataset.tags.split(' ').includes(activeFilter);
+          const visible = matchesText && matchesTag;
+          paper.classList.toggle('hidden', !visible);
+          if (visible) shown++;
+        });
+
+        sections.forEach(section => {
+          const visiblePapers = section.querySelectorAll('.paper:not(.hidden)').length;
+          section.classList.toggle('hidden', visiblePapers === 0);
+        });
+
+        resultCount.textContent = shown === papers.length ? 'All papers' : shown + ' shown';
+      }
+
+      papers.forEach(inferTags);
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          button.classList.add('active');
+          activeFilter = button.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      search.addEventListener('input', applyFilters);
+      applyFilters();
+    }());
+  </script>
 </body>
 </html>
