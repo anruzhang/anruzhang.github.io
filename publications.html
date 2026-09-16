@@ -682,6 +682,7 @@
           <span>Work awaiting publication</span>
         </div>
         <ul class="paper-list">
+          <li class="paper" data-tags="ml health">Pengfei Lyu, Ricardo Henao, Lillian C. Kwee, Fred Zhangzhi Peng, Sreekanth Vemulapalli, Svati H. Shah, Michel G. Khouri, and Anru R. Zhang (2026+). <a href="https://www.medrxiv.org/content/10.64898/2026.09.14.26363024v1">Synthetic Echocardiograms from Diffusion Models in Rare Cardiovascular Disease</a>.<div class="tags"><span class="tag" data-tag="ml">ML &amp; generative AI</span><span class="tag" data-tag="health">Health &amp; biomedicine</span></div></li>
           <li class="paper">Zhengchi Ma, Pengfei Lyu, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2606.26053">When does synthetic data augmentation improve score-based imbalanced classification?</a>.</li>
           <li class="paper">Zhengchi Ma and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2601.16120">Synthetic augmentation in imbalanced learning: When it helps, When it hurts, and how much to add</a>.</li>
           <li class="paper">Jian Lu, Panyu Chen, Miriam Treggiari, Robert Blessing, Danyang Zhuo, Chunhua Weng, William W. Stead, and Anru R. Zhang (2026+). <a href="https://arxiv.org/abs/2607.22954">Toward Automated Detection of Documentation Inconsistencies in Electronic Health Records</a>.</li>
@@ -892,19 +893,25 @@
       };
 
       function inferTags(paper) {
+        /* Respect explicitly assigned categories; otherwise infer them from the paper text. */
+        const explicitTags = (paper.dataset.tags || '').trim().split(/\s+/).filter(Boolean);
+        paper.querySelectorAll(':scope > .tags').forEach(holder => holder.remove());
         const text = paper.textContent.toLowerCase();
-        const tags = [];
-        Object.entries(rules).forEach(([key, terms]) => {
-          if (terms.some(term => text.includes(term))) tags.push(key);
-        });
+        const tags = explicitTags.length ? explicitTags : [];
+
+        if (!explicitTags.length) {
+          Object.entries(rules).forEach(([key, terms]) => {
+            if (terms.some(term => text.includes(term))) tags.push(key);
+          });
+        }
 
         /* Papers are allowed to span areas. If no rule fires, retain them under "All" only. */
-        paper.dataset.tags = tags.join(' ');
+        paper.dataset.tags = [...new Set(tags)].join(' ');
 
         if (tags.length) {
           const holder = document.createElement('div');
           holder.className = 'tags';
-          tags.forEach(tag => {
+          [...new Set(tags)].forEach(tag => {
             const pill = document.createElement('span');
             pill.className = 'tag';
             pill.dataset.tag = tag;
