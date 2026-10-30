@@ -7,277 +7,6 @@
   <title>Anru Zhang | Duke University</title>
   <link rel="stylesheet" href="style/modern.css">
 
-  <style>
-    /* Spacing enhancements */
-    .site-header {
-      padding: 1.5rem 0;
-    }
-
-    .header-inner {
-      gap: 2rem;
-    }
-
-    .brand-name {
-      margin: 0 0 0.4rem;
-    }
-
-    .brand-affiliation {
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    .nav-list {
-      gap: 0.5rem 1.5rem;
-    }
-
-    .nav-list a {
-      display: inline-block;
-      padding: 0.5rem 0;
-    }
-
-    main {
-      padding: 3rem 0 4rem;
-    }
-
-    .hero {
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    .hero-home {
-      align-items: center;
-    }
-
-    .eyebrow {
-      margin: 0 0 0.75rem;
-    }
-
-    .hero h1 {
-      margin: 0 0 1rem;
-      line-height: 1.15;
-    }
-
-    .lede {
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    .quick-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.75rem;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 0.7rem 1rem;
-    }
-
-    .profile-photo {
-      margin: 0;
-    }
-
-    .section {
-      margin-top: 4rem;
-    }
-
-    .section:first-of-type {
-      margin-top: 0;
-    }
-
-    .section-header {
-      margin-bottom: 2rem;
-    }
-
-    .section-header h2 {
-      margin: 0 0 0.5rem;
-    }
-
-    .section-header p {
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .prose p {
-      margin: 0;
-      line-height: 1.75;
-    }
-
-    .prose p + p {
-      margin-top: 1.25rem;
-    }
-
-    .card-grid {
-      gap: 1.25rem;
-    }
-
-    .card {
-      padding: 1.5rem;
-    }
-
-    .card h3 {
-      margin: 0 0 0.75rem;
-    }
-
-    .card p {
-      margin: 0;
-      line-height: 1.65;
-    }
-
-    .map-grid {
-      gap: 1.25rem;
-    }
-
-    .map-card {
-      padding: 1.5rem;
-    }
-
-    .map-card h3 {
-      margin: 0 0 0.75rem;
-    }
-
-    .map-card p {
-      margin: 0;
-      line-height: 1.65;
-    }
-
-    .research-area-list .map-card {
-      min-height: 0;
-    }
-
-    .research-area-list .map-card h3 {
-      margin: 0;
-    }
-
-    .callout {
-      padding: 1.5rem;
-    }
-
-    .callout p {
-      margin: 0.75rem 0 0;
-      line-height: 1.7;
-    }
-
-    .news-list {
-      margin: 0;
-      padding: 0;
-    }
-
-    .news-list li {
-      padding: 1rem 0;
-      line-height: 1.65;
-    }
-
-    .news-list li + li {
-      margin-top: 0.25rem;
-    }
-
-    .news-list time {
-      display: inline-block;
-      margin-right: 0.6rem;
-    }
-
-    footer {
-      margin-top: 2rem;
-      padding: 2rem 0;
-    }
-
-    .footer-row {
-      gap: 1rem 2rem;
-    }
-
-    .footer-row p {
-      margin: 0;
-    }
-
-    @media (max-width: 760px) {
-      .site-header {
-        padding: 1.25rem 0;
-      }
-
-      .header-inner {
-        gap: 1.25rem;
-      }
-
-      .nav-list {
-        gap: 0.25rem 1rem;
-      }
-
-      main {
-        padding: 2rem 0 3rem;
-      }
-
-      .hero {
-        gap: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      .quick-links {
-        gap: 0.6rem;
-        margin-top: 1.5rem;
-      }
-
-      .section {
-        margin-top: 3rem;
-      }
-
-      .section-header {
-        margin-bottom: 1.5rem;
-      }
-
-      .card-grid,
-      .map-grid {
-        gap: 1rem;
-      }
-
-      .card,
-      .map-card,
-      .callout {
-        padding: 1.25rem;
-      }
-
-      .news-list li {
-        padding: 0.9rem 0;
-      }
-    }
-    
-    .callout {
-  padding: 1.5rem;
-}
-
-.callout p {
-  margin: 0.75rem 0 0;
-  line-height: 1.7;
-}
-
-/* Book section */
-.book-callout {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.book-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-@media (max-width: 760px) {
-  /* your existing mobile CSS */
-
-  .book-callout {
-    grid-template-columns: 1fr;
-  }
-
-  .book-image {
-    max-width: 220px;
-  }
-}
-  </style>
 </head>
 
 <body>
@@ -287,9 +16,11 @@
         <h2 class="brand-name">Anru Zhang</h2>
         <p class="brand-affiliation">Department of Biostatistics &amp; Bioinformatics and Department of Computer Science, Duke University</p>
       </div>
-
-      <nav aria-label="Primary">
-        <ul class="nav-list">
+    </div>
+  </header>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="header-inner">
+      <ul class="nav-list">
           <li class="selected"><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
@@ -297,23 +28,19 @@
           <li><a href="teaching.html">Teaching</a></li>
           <li><a href="software.html">Software</a></li>
         </ul>
-      </nav>
     </div>
-  </header>
+  </nav>
 
   <main>
     <div class="page-shell">
 
       <section class="hero hero-home">
         <div>
-          <p class="eyebrow">Statistics · machine learning · AI for science &amp; health</p>
           <p class="lede">I am a professor at Duke University working on the foundations, methodology, and applications of statistics and machine learning, with interests spanning generative AI, high-dimensional inference, tensor and low-rank learning, optimization, and health and biomedical data.</p>
 
           <div class="quick-links">
-            <a class="pill" href="research.html">Explore research</a>
-            <a class="pill" href="publications.html">Browse publications</a>
-            <a class="pill" href="group.html">Meet the group</a>
-            <a class="pill" href="https://scholar.google.com/citations?user=H-PvgRsAAAAJ&hl=en">Google Scholar</a>
+            <a class="pill" href="https://scholar.google.com/citations?user=H-PvgRsAAAAJ&amp;hl=en">Google Scholar</a>
+            <a class="pill" href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a>
           </div>
         </div>
 
@@ -326,27 +53,15 @@
         </div>
 
         <div class="prose">
-          <p>I am a tenured full professor with joint primary appointments in the Department of <a href="https://biostat.duke.edu">Biostatistics &amp; Bioinformatics (B&amp;B)</a> and the Department of <a href="https://www.cs.duke.edu/">Computer Science</a> at <a href="https://www.duke.edu/">Duke University</a>. I serve as Vice Chair for Research at Duke B&amp;B. I hold secondary appointments in Duke <a href="https://stat.duke.edu/">Statistical Science</a> and <a href="https://ece.duke.edu/">ECE</a>.</p>
+          <p>I am a tenured full professor with joint primary appointments in the Department of <a href="https://biostat.duke.edu">Biostatistics &amp; Bioinformatics (B&amp;B)</a> and the Department of <a href="https://www.cs.duke.edu/">Computer Science</a> at <a href="https://www.duke.edu/">Duke University</a>, where I serve as Vice Chair for Research at Duke B&amp;B. I hold secondary appointments in Duke <a href="https://stat.duke.edu/">Statistical Science</a> and <a href="https://ece.duke.edu/">ECE</a>.</p>
 
           <p>I received my PhD from the University of Pennsylvania in 2015, advised by T. Tony Cai, and my bachelor's degree in mathematics from Peking University in 2010. Before joining Duke, I was an Assistant Professor of Statistics at UW–Madison.</p>
         </div>
 
-        <div class="card-grid" style="margin-top:20px">
-          <article class="card">
-            <h3>Research leadership</h3>
-            <p>Vice Chair for Research, Duke Biostatistics &amp; Bioinformatics; joint faculty across Biostatistics &amp; Bioinformatics and Computer Science.</p>
-          </article>
-
+        <div class="card-grid two" style="margin-top:20px">
           <article class="card">
             <h3>Editorial service</h3>
-<p>
-  Associate editor roles include <i>The Annals of Statistics</i>,
-  the Theory &amp; Methods and Applications &amp; Case Studies sections of
-  <i>Journal of the American Statistical Association</i>,
-  <i>Statistica Sinica</i>, <i>Statistics and Its Interface</i>,
-  ASA Discoveries, and Statistical Learning and Data Science.
-</p>
-
+            <p>Associate editor roles include <i>The Annals of Statistics</i>, the Theory &amp; Methods and Applications &amp; Case Studies sections of <i>Journal of the American Statistical Association</i>, <i>Statistica Sinica</i>, <i>Statistics and Its Interface</i>, ASA Discoveries, and Statistical Learning and Data Science.</p>
           </article>
 
           <article class="card">
@@ -359,21 +74,40 @@
       <section class="section">
         <div class="section-header">
           <h2>Research areas</h2>
-          <p><a href="research.html">View research details →</a></p>
         </div>
 
-        <div class="map-grid research-area-list">
-          <div class="map-card ml"><h3>Synthetic Data</h3></div>
-          <div class="map-card applications"><h3>Health Informatics</h3></div>
-          <div class="map-card ml"><h3>Generative Models</h3></div>
-          <div class="map-card methods"><h3>Tensor Data Analysis</h3></div>
-          <div class="map-card applications"><h3>Microbiome Data Analysis</h3></div>
-          <div class="map-card foundations"><h3>High-Dimensional Statistics</h3></div>
-          <div class="map-card methods"><h3>Nonconvex &amp; Riemannian Optimization</h3></div>
-          <div class="map-card methods"><h3>Markov (Decision) Processes</h3></div>
-          <div class="map-card applications"><h3>Network Analysis</h3></div>
-          <div class="map-card foundations"><h3>Computational Complexity of Statistical Inference</h3></div>
-          <div class="map-card applications"><h3>Collaborative Research</h3></div>
+        <div class="area-map">
+          <div class="area-group foundations">
+            <h3>Statistical foundations</h3>
+            <ul>
+              <li><a href="research.html#foundations">High-dimensional statistics</a></li>
+              <li><a href="research.html#complexity">Computational complexity of inference</a></li>
+            </ul>
+          </div>
+          <div class="area-group methods">
+            <h3>Methods &amp; computation</h3>
+            <ul>
+              <li><a href="research.html#tensor">Tensor data analysis</a></li>
+              <li><a href="research.html#optimization">Nonconvex &amp; Riemannian optimization</a></li>
+              <li><a href="research.html#markov">Markov (decision) processes</a></li>
+            </ul>
+          </div>
+          <div class="area-group ml">
+            <h3>Generative AI</h3>
+            <ul>
+              <li><a href="research.html#generative">Generative models</a></li>
+              <li><a href="research.html#synthetic">Synthetic data</a></li>
+            </ul>
+          </div>
+          <div class="area-group applications">
+            <h3>Science &amp; health</h3>
+            <ul>
+              <li><a href="research.html#health">Health informatics</a></li>
+              <li><a href="research.html#microbiome">Microbiome data analysis</a></li>
+              <li><a href="research.html#network">Network analysis</a></li>
+              <li><a href="research.html#collaborative">Collaborative research</a></li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -394,7 +128,7 @@
         </div>
 
         <ul class="news-list">
-          <li><time>10/2026</time> Invited to deliver the keynote lecture at the University of Pittsburgh Biostatistics Research Day</a> (March 2027).</li>
+          <li><time>10/2026</time> Invited to deliver the keynote lecture at the University of Pittsburgh Biostatistics Research Day (March 2027).</li>
           <li><time>10/2026</time> Named a Fellow of the American Medical Informatics Association (AMIA).</li>
           <li><time>08/2026</time> Delivered a plenary lecture at the <a href="https://wrightstephen.github.io/ifds-research-expo/">IFDS Research Expo</a>, Institute for Foundations of Data Science, University of Wisconsin–Madison.</li>
           <li><time>04/2026</time> Elected <a href="https://www.amstat.org/your-career/awards/asa-fellows">Fellow of the American Statistical Association</a>.</li>
@@ -436,8 +170,8 @@
 
   <footer>
     <div class="page-shell footer-row">
-      <p>Copyright &copy; Anru Zhang</p>
-      <p><a href="index.html">Home</a> · <a href="research.html">Research</a> · <a href="software.html">Software</a></p>
+      <p>&copy; Anru Zhang</p>
+      <p><a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a></p>
     </div>
     <div class="page-shell statcounter">
       <!-- Start of StatCounter Code for Default Guide -->
@@ -445,13 +179,6 @@
         <img src="https://c.statcounter.com/12576669/0/7ae82a37/1/" alt="Web Analytics" referrerpolicy="no-referrer-when-downgrade">
       </a>
       <!-- End of StatCounter Code for Default Guide -->
-    </div>
-  </footer>
-
-  <footer>
-    <div class="page-shell footer-row">
-      <p>&copy; Anru Zhang</p>
-      <p><a href="mailto:anru.zhang@duke.edu">anru.zhang@duke.edu</a></p>
     </div>
   </footer>
 </body>

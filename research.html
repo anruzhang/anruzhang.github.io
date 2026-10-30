@@ -7,227 +7,6 @@
   <title>Research | Anru Zhang</title>
   <link rel="stylesheet" href="style/modern.css">
 
-  <style>
-    /* Spacing enhancements */
-    .site-header {
-      padding: 1.5rem 0;
-    }
-
-    .header-inner {
-      gap: 2rem;
-    }
-
-    .brand-name {
-      margin: 0 0 0.4rem;
-    }
-
-    .brand-affiliation {
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    .nav-list {
-      gap: 0.5rem 1.5rem;
-    }
-
-    .nav-list a {
-      display: inline-block;
-      padding: 0.5rem 0;
-    }
-
-    main {
-      padding: 3rem 0 4rem;
-    }
-
-    .hero {
-      gap: 3rem;
-      margin-bottom: 4rem;
-    }
-
-    .eyebrow {
-      margin: 0 0 0.75rem;
-    }
-
-    .hero h1 {
-      margin: 0 0 1rem;
-      line-height: 1.15;
-    }
-
-    .lede {
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    .hero-note {
-      padding: 1.5rem;
-    }
-
-    .hero-note p {
-      margin: 0.75rem 0 0;
-      line-height: 1.6;
-    }
-
-    /* Research overview */
-    .research-map {
-      margin-bottom: 4rem;
-    }
-
-    .research-map .section-header {
-      margin-bottom: 2rem !important;
-    }
-
-    .research-map .section-header h2 {
-      margin: 0 0 0.5rem;
-    }
-
-    .research-map .section-header p {
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    .map-grid {
-      gap: 1.25rem;
-    }
-
-    .map-card {
-      padding: 1.5rem;
-    }
-
-    .map-card h3 {
-      margin: 0 0 0.75rem;
-      line-height: 1.3;
-    }
-
-    .map-card p {
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    /* Individual research sections */
-    .research-section {
-      margin-top: 4.5rem;
-      padding-top: 0.5rem;
-    }
-
-    .research-section:first-of-type {
-      margin-top: 0;
-    }
-
-    .research-section > .eyebrow {
-      margin-bottom: 0.65rem;
-    }
-
-    .research-section > h2 {
-      margin: 0 0 1rem;
-      line-height: 1.2;
-    }
-
-    .research-section .summary {
-      margin: 0;
-      line-height: 1.75;
-    }
-
-    .research-media {
-      margin: 2rem 0;
-      gap: 1.25rem;
-    }
-
-    .research-media img {
-      display: block;
-      margin: 0;
-    }
-
-    .research-section > h3 {
-      margin: 2rem 0 1rem;
-    }
-
-    .paper-list {
-      margin: 0;
-      padding-left: 1.25rem;
-    }
-
-    .paper-list li {
-      padding: 0.4rem 0;
-      line-height: 1.6;
-    }
-
-    .research-section > p:last-child {
-      margin-top: 1.25rem !important;
-    }
-
-    footer {
-      margin-top: 3rem;
-      padding: 2rem 0;
-    }
-
-    .footer-row {
-      gap: 1rem 2rem;
-    }
-
-    .footer-row p {
-      margin: 0;
-    }
-
-    @media (max-width: 760px) {
-      .site-header {
-        padding: 1.25rem 0;
-      }
-
-      .header-inner {
-        gap: 1.25rem;
-      }
-
-      .nav-list {
-        gap: 0.25rem 1rem;
-      }
-
-      main {
-        padding: 2rem 0 3rem;
-      }
-
-      .hero {
-        gap: 2rem;
-        margin-bottom: 3rem;
-      }
-
-      .research-map {
-        margin-bottom: 3rem;
-      }
-
-      .research-map .section-header {
-        margin-bottom: 1.5rem !important;
-      }
-
-      .map-grid {
-        gap: 1rem;
-      }
-
-      .map-card {
-        padding: 1.25rem;
-      }
-
-      .research-section {
-        margin-top: 3.5rem;
-      }
-
-      .research-media {
-        margin: 1.5rem 0;
-        gap: 1rem;
-      }
-
-      .research-section > h3 {
-        margin-top: 1.5rem;
-      }
-
-      .paper-list li {
-        padding: 0.35rem 0;
-      }
-
-      footer {
-        margin-top: 2rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -237,9 +16,11 @@
         <h2 class="brand-name">Anru Zhang</h2>
         <p class="brand-affiliation">Department of Biostatistics &amp; Bioinformatics and Department of Computer Science, Duke University</p>
       </div>
-
-      <nav aria-label="Primary">
-        <ul class="nav-list">
+    </div>
+  </header>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="header-inner">
+      <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li class="selected"><a href="research.html" aria-current="page">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
@@ -247,9 +28,8 @@
           <li><a href="teaching.html">Teaching</a></li>
           <li><a href="software.html">Software</a></li>
         </ul>
-      </nav>
     </div>
-  </header>
+  </nav>
 
   <main>
     <div class="page-shell">
@@ -260,110 +40,49 @@
           <h1>From foundations to scientific impact.</h1>
           <p class="lede">My group develops statistical and machine-learning theory, methods, and algorithms for modern high-dimensional and structured data, while working closely with scientific problems in health and biomedicine.</p>
         </div>
-
-        <aside class="hero-note">
-          <strong>Research + publications</strong>
-        </aside>
       </section>
 
       <section class="research-map">
-        <div class="section-header" style="border:0;margin-bottom:20px;padding:0">
+        <div class="section-header">
           <h2>Research areas</h2>
-          <p>Jump directly to a topic.</p>
+          <p>From statistical foundations to scientific and health applications. Select a topic to jump to it.</p>
         </div>
 
-<div class="map-grid">
-  <a class="map-card ml" href="#synthetic">
-    <h3>Synthetic Data</h3>
-    <p>
-      Synthetic data preserve key statistical patterns of real data while reducing reliance on
-      sensitive or hard-to-access records, especially when privacy, limited sample size, or class
-      imbalance make real-world data insufficient.
-    </p>
-  </a>
-
-  <a class="map-card applications" href="#health">
-    <h3>Health Informatics</h3>
-    <p>
-      Electronic health records provide rich longitudinal information on patient histories,
-      treatments, and outcomes, creating opportunities for statistical and machine-learning
-      research in healthcare.
-    </p>
-  </a>
-
-  <a class="map-card ml" href="#generative">
-    <h3>Generative Models</h3>
-    <p>
-      Generative models learn the underlying distribution of data and enable realistic synthetic
-      generation for applications including simulation, privacy preservation, and data augmentation.
-    </p>
-  </a>
-
-  <a class="map-card methods" href="#tensor">
-    <h3>Tensor Data Analysis</h3>
-    <p>
-      High-dimensional tensors arise in neuroimaging, microbiology, bioinformatics, and materials
-      science, where complex structure creates both statistical and computational challenges.
-    </p>
-  </a>
-
-  <a class="map-card applications" href="#microbiome">
-    <h3>Microbiome Data Analysis</h3>
-    <p>
-      Our work addresses statistical challenges in compositional and longitudinal microbiome data,
-      including regression, measurement error, dimensionality reduction, and microbial network analysis.
-    </p>
-  </a>
-
-  <a class="map-card foundations" href="#foundations">
-    <h3>High-dimensional Statistics</h3>
-    <p>
-      High-dimensional statistics studies inference when the number of variables is comparable to
-      or greater than the number of observations, where classical low-dimensional methods can fail.
-    </p>
-  </a>
-
-  <a class="map-card methods" href="#optimization">
-    <h3>Nonconvex &amp; Riemannian Optimization</h3>
-    <p>
-      Riemannian optimization uses geometric structure to solve optimization problems on manifolds,
-      enabling efficient methods for complex and high-dimensional statistical problems.
-    </p>
-  </a>
-
-  <a class="map-card methods" href="#markov">
-    <h3>Markov (Decision) Processes</h3>
-    <p>
-      We study model reduction and representation learning for Markov processes and reinforcement
-      learning, including state aggregation and low-dimensional representations of state-action dynamics.
-    </p>
-  </a>
-
-  <a class="map-card applications" href="#network">
-    <h3>Network Analysis</h3>
-    <p>
-      Network analysis studies relationships and interactions in complex systems, with our work
-      focusing particularly on tensor networks, multilayer networks, and community structure.
-    </p>
-  </a>
-
-  <a class="map-card foundations" href="#complexity">
-    <h3>Computational Complexity of Statistical Inference</h3>
-    <p>
-      We study gaps between statistical limits and what computationally efficient algorithms can
-      achieve, particularly in high-dimensional tensor and network problems.
-    </p>
-  </a>
-
-  <a class="map-card applications" href="#collaborative">
-    <h3>Collaborative Research</h3>
-    <p>
-      Interdisciplinary collaboration connects our statistical methodology with problems in
-      neuroscience, radiology, psychiatry, biomedical imaging, and other scientific domains.
-    </p>
-  </a>
-</div>
+        <div class="area-map detailed">
+          <div class="area-group foundations">
+            <h3>Statistical foundations</h3>
+            <ul>
+              <li><a href="#foundations"><strong>High-dimensional Statistics</strong><span>High-dimensional statistics studies inference when the number of variables is comparable to or greater than the number of observations, where classical low-dimensional methods can fail.</span></a></li>
+              <li><a href="#complexity"><strong>Computational Complexity of Statistical Inference</strong><span>We study gaps between statistical limits and what computationally efficient algorithms can achieve, particularly in high-dimensional tensor and network problems.</span></a></li>
+            </ul>
+          </div>
+          <div class="area-group methods">
+            <h3>Methods &amp; computation</h3>
+            <ul>
+              <li><a href="#tensor"><strong>Tensor Data Analysis</strong><span>High-dimensional tensors arise in neuroimaging, microbiology, bioinformatics, and materials science, where complex structure creates both statistical and computational challenges.</span></a></li>
+              <li><a href="#optimization"><strong>Nonconvex &amp; Riemannian Optimization</strong><span>Riemannian optimization uses geometric structure to solve optimization problems on manifolds, enabling efficient methods for complex and high-dimensional statistical problems.</span></a></li>
+              <li><a href="#markov"><strong>Markov (Decision) Processes</strong><span>We study model reduction and representation learning for Markov processes and reinforcement learning, including state aggregation and low-dimensional representations of state-action dynamics.</span></a></li>
+            </ul>
+          </div>
+          <div class="area-group ml">
+            <h3>Generative AI</h3>
+            <ul>
+              <li><a href="#generative"><strong>Generative Models</strong><span>Generative models learn the underlying distribution of data and enable realistic synthetic generation for applications including simulation, privacy preservation, and data augmentation.</span></a></li>
+              <li><a href="#synthetic"><strong>Synthetic Data</strong><span>Synthetic data preserve key statistical patterns of real data while reducing reliance on sensitive or hard-to-access records, especially when privacy, limited sample size, or class imbalance make real-world data insufficient.</span></a></li>
+            </ul>
+          </div>
+          <div class="area-group applications">
+            <h3>Science &amp; health</h3>
+            <ul>
+              <li><a href="#health"><strong>Health Informatics</strong><span>Electronic health records provide rich longitudinal information on patient histories, treatments, and outcomes, creating opportunities for statistical and machine-learning research in healthcare.</span></a></li>
+              <li><a href="#microbiome"><strong>Microbiome Data Analysis</strong><span>Our work addresses statistical challenges in compositional and longitudinal microbiome data, including regression, measurement error, dimensionality reduction, and microbial network analysis.</span></a></li>
+              <li><a href="#network"><strong>Network Analysis</strong><span>Network analysis studies relationships and interactions in complex systems, with our work focusing particularly on tensor networks, multilayer networks, and community structure.</span></a></li>
+              <li><a href="#collaborative"><strong>Collaborative Research</strong><span>Interdisciplinary collaboration connects our statistical methodology with problems in neuroscience, radiology, psychiatry, biomedical imaging, and other scientific domains.</span></a></li>
+            </ul>
+          </div>
+        </div>
       </section>
+
 
       <section class="research-section" id="synthetic">
         <p class="eyebrow">Machine learning</p>
